@@ -4,7 +4,7 @@ curacao - niebieskie_curacao - blue_curacao
 
 ---------------------
 
-mocne alkohole:
+mocne_alkohole:
   whisky
   wodka
   rum
@@ -29,10 +29,13 @@ slodziki:
   grenadyna
   syrop_cukrowy
   likier_pomaranczowy
+  syrop_bananowy
   syrop_malinowy
   amaretto
+  cukier_bialy
+  cukier_trzcinowy
 
-napoje: // a moze jednak lepiej się tego pozbyć i wyciskać owoce?
+napoje:
   sok_bez_cukru
   sok_slodzony
   woda_niegazowana
@@ -48,8 +51,6 @@ napoje: // a moze jednak lepiej się tego pozbyć i wyciskać owoce?
 dodatki:
   lod
   brak_lodu
-  cukier_bialy
-  cukier_trzcinowy
   miod
 
 przyprawy:
@@ -58,5 +59,3 @@ przyprawy:
   tabasco
   imbir
   
-  
-[TODO] deftemplate owoce, deftemplate dodatki, ...

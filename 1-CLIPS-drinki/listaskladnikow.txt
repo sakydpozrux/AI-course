@@ -1,0 +1,58 @@
+;;; =================
+;;; mocne_alkohole:
+  ;(whisky)
+  ;(wodka)
+  ;(rum)
+
+;;; ==================
+;;; owoce:
+  ;(cytryna)
+  ;(limonka)
+  ;(pomarancza)
+  ;(jablko)
+  ;(ananas)
+  ;(grejpfrut)
+  ;(zurawina)
+  ;(banan)
+  ;(arbuz)
+  ;(kiwi)
+  ;(truskawka)
+
+;;; ==================
+;;; slodziki:
+  ;(niebieskie_curacao)
+  ;(pomaranczowe_curacao)
+  ;(grenadyna)
+  ;(syrop_cukrowy)
+  ;(likier_pomaranczowy)
+  ;(syrop_bananowy)
+  ;(syrop_malinowy)
+  ;(amaretto)
+  ;(cukier_bialy)
+  ;(cukier_trzcinowy)
+  ;(miod)
+
+;;; ==================
+;;; napoje:
+  ;(sok_bez_cukru)
+  ;(sok_slodzony)
+  ;(woda_niegazowana)
+  ;(piwo_imbirowe)
+  ;(wino_czerwone)
+  ;(wino_imbirowe)
+  ;(wino_wermut)
+  ;(tonic)
+  ;(cola)
+  ;(szampan)
+
+;;; ==================
+;;; dodatki:
+  ;(lod)
+
+;;; ==================
+;;; przyprawy:
+  ;(cynamon)
+  ;(listki_miety)
+  ;(tabasco)
+  ;(imbir)
+
