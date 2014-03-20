@@ -1,0 +1,459 @@
+source - http://www.gamefaqs.com/android/614765-alchemy/faqs/65381
+
+Begining Elements
+
+1. Air
+2. Earth
+3. Fire
+4. Water
+
+Alphabetical Order for the following 386 elements
+
+#
+	5. 1up = Life + Mushroom
+
+A's
+	6. Airplane = Metal + Bird
+	7. Albert_Einstein = Scientist + Energy
+	8. Alcohol = Fire + Water
+	9. Alcoholic = Man + Alcohol
+	10. Algae = Life + Water
+	11. Alien = Star + Life
+	12. Aluminium = Airplane + Metal
+	13. Ambulance = Hospital + Car
+	14. Aquarium = Glass + Fish
+	15. Arable = Earth + Tool
+	16. Arms = Metal + Tool
+	17. Ash = Fire + Tree
+	18. Ashtray = Ash + Glass
+	19. Assassin = Man + Poisoned_Weapons
+	20. Austrialia = Kangaroo + Country
+	21. Avian_Flu = Bird + Flu
+
+B's
+	22. Baby = Man + Sex
+  22. Baby = Sex + Woman
+	23. Bacon = Fire + Pig
+	24. Bacteria = Life + Swamp
+	25. Bar = Brick_House + Beer
+	26. Barbeque = Fire + Meat
+	27. Bat = Bird + Vampire
+	28. Batman = Bat + Man
+	29. Beach = Water + Sand
+	30. Bear = Beast + Forest
+	31. Beast = Earth + Lizard
+	32. Beaver = Dam + Beast
+	33. Bee = Flower + Beetle
+	34. Beer = Alcohol + Wheat
+	35. Beetle = Earth + Worm
+	36. Beetroot = Sugar + Seed
+	37. Belarus = Tractor + Country
+	38. Berry = Grass + Fruit
+	39. Bicycle = Wheel + Wheel
+	40. Bird = Air + Egg
+	41. Bitumen = Kerogen + Pressure
+	42. Blood = Beast + Hunter
+	43. Boat = Wood + Water
+	44. Boiler = Metal + Steam
+	45. Book = Feather + Paper
+	46. Borscht = Beetroot + Fire
+	47. Bow = Robin Hood + Arms
+	48. Bread = Dough + Fire
+	49. Brick = Clay + Fire
+	50. Brick_House = Brick + Concrete
+	51. Butterfly = Air + Worm
+
+C's
+	52. C_3PO = Gold + Robot	
+	53. Cactus = Desert + Tree
+	54. Camel = Desert + Beast
+	55. Cancer = Man + Tobacco
+	56. Car = Cart + Combustion_Engine
+	57. Caramel = Sugar + Fire
+	58. Carbon Dioxide = Oxygen + Man
+	59. Carmine = Cochineal + Fire
+	60. Cart = Wheel + Wood
+	61. Cat = Mouse + Hunter
+	62. Catdog = Cat + Dog
+	63. Caviar = Fish + Fish
+	63. Caviar = Fish + Egg
+	64. Cement = Clay + Limestone
+	65. Cemetery = Grave + Grave
+	66. Ceramics = Clay + Man
+	67. Champagne = Soda_Water + Wine
+	68. Chariot = Warrior + Cart
+	69. Cheese = Quark + Fire
+	70. Chicken = Egg + Life
+	71. China = Dragon + Country
+	72. Chocolate = Cocoa + Sugar
+	73. Christmas_Tree = Tree + Lightbulb
+	74. Cigarettes = Paper + Tobacco
+	75. City = Skyscraper + Skycraper
+	76. Clay = Sand + Swamp
+	77. Clock = Hourglass + Electricity
+	78. Cloth = Tool + Wool
+	79. Clothing = Cloth + Man
+	80. Cloud = Air + Steam
+	81. Coal = Fire + Tree
+	82. Coca_Cola = Soda_Water + Carmine
+	83. Cochineal = Cactus + Beetle
+	84. Cocoa = Seed + Mexico
+	85. Coffin = Corpse + wood
+	86. Coin = Silver + Pressure
+	87. Coin = Mario + Brick
+	87. Combustion_Engine = Steam_Engine + Gasoline
+	88. Concrete = Cement + Water
+	89. Continent = Country + Country
+	90. Copper = Silver + Gold
+	91. Corpse = Fire + Man
+	92. Country = City + City
+	93. Crop_Circles = UFO + Arable
+
+D's
+	94. Dam = Water + Brick
+	95. Desert = Sand + Sand
+	96. Diamond = Uncut_Diamond + Tool
+	97. Diet = Man + Yogurt
+	98. Dilemma = Egg + Chicken
+	99. Dinosaur = Earth + Egg
+	100. Doctor = Hospital + Scientist
+	101. Dog = Wolf + Man
+	102. Dough = Flour + Water
+	103. Dr_Zoidberg = Doctor + Lobster
+	104. Dragon = Dinosaur + Fire
+	104. Deagon = Pterodactyl + Fire
+	105. Dust = Air + Earth
+
+E's
+	106. E_Book = Microchip + Book
+	107. Ectoplasm = Ghost + Energy
+	108. Egg = Life + Stone
+	109. Egypt = Cat + Country
+	110. Egypt = Mummy + Country
+	110. Electric_Eel = Snake + Electricity
+	111. Electric_Ray = Fish + Electricity
+	112. Electricity = Energy + Metal
+	113. Elephant = Whale + Earth
+	114. Energy = Air + Fire
+	115. ENT = Tree + Life
+	116. Explosion = Gasoline + Fire
+
+F's
+	117. Fabrege_Egg = Egg + Diamond
+	118. Farmer = Man + Seed
+	119. Fat = Man + Pig
+	120. Feather = Bird + Hunter
+	121. Fern = Moss + Swamp
+	122. Finland = Sauna + Country
+	123. Fire_Elemental = Fire + Life
+	124. Firearms = Arms + Gunpowder
+	125. Firefighter = Hero + Fire
+	126. Firefly = Light + Beetle
+	127. Fish = Bacteria + Plankton
+	128. Fisherman = Hunter + Fish
+	129. Flour = Stone + Wheat
+	130. Flower = Water + Seed
+	131. Flu = Air + Bacteria
+	132. Fondue = Cheese + Fire
+	133. Forest = Grove + Grove
+	134. Fossil = Butterfly + Earth
+	135. France = Champagne + Country
+	136. Frankenstein = Corpse + Electricity
+	137. Fried_Chicken = Chicken + Fire
+	138. Frog = Lizard + Swamp
+	139. Fruit = Tree + Farmer
+	139. Fruit = Tree + Flower
+	140. Fugu = Fish + Poison
+
+G's
+	141. Gasoline = Petroleum + Pressure
+	142. Genie = Lamp + Ghost
+	143. Germany = VW_Beetle + Country
+	144. Geyser = Steam + Earth
+	145. Ghost = Ash + Life
+	146. Ghostbusters = Hunter + Ghost
+	147. Glass = Fire + Sand
+	148. Gold = Philosophers_Stone + Silver
+	149. Golem = Clay + Life
+	150. Grape = Earth + Wood
+	151. Grass = Earth + Moss
+	152. Grave = Earth + Corpse
+	153. Grove = Tree + Tree
+	154. Gunpowder = Dust + Fire
+
+H's
+	155. Hen_Coop = Chicken + Hut
+	156. Hero = Dragon + Warrior
+	157. Honey = Bee + Tree
+	158. Hospital = Brick_House + Sick
+	159. Hot_Chocolate = Chocolate + Fire
+	160. Hourglass = Glass + sand
+	161. House_M_D = Man + Vicodin
+	162. Hunter = Arms + Man
+	163. Hut = Man + Stone
+	164. Hydrogen = Electricity + Water
+
+I's
+	165. Ice = Water + Glass
+	166. Iceland = Volcano + Country
+	167. Idea = Man + Lightbulb
+	168. India = Kama_Sutra + Country
+	169. Iodine = Algae + Fire
+	170. iPhone = Phone + Fruit
+	171. Island = Sea + Volcano
+	172. Italy = Venice + Country
+
+J's
+	173. Japan = Sushi + Country
+	174. Jedi = Warrior + Lightsaber
+	175. Juice = Berry + Pressure
+
+K's
+	176. Kama_Sutra = Book + Sex
+	177. Kangaroo = Frog + 1UP
+	178. Kerogen = Fossil + Pressure
+	179. Kilt = Scotland + Clothing
+	180. Knife = Meat + Tool
+
+L's
+	181. Lamp = Glass + Fire
+	182. Lance_Armstrong = Cancer + Bike
+	183. Lava = Earth + Fire
+	184. Lava_Golem = Lava + Life
+	185. Lava_Lamp = Lava + Lamp
+	186. Lawn_Mower = Scissors + Combustion_Engine
+	187. Leech = Blood + Worm
+	188. Library = Book + Book
+	189. Lichen = Mushroom + Algae
+	190. Life = Energy + Swamp
+	191. Light = Electricity + Lightbulb 
+	192. Lightbulb = Electricity + Glass
+	193. Lighthouse = Skyscraper + Light
+	194. Lightning_Rod = Thunderstorm + Metal
+	195. Lightsaber = Arms + Light
+	196. Lime = Fire + Limestone
+	197. Limestone = Shells + Stone
+	198. Livestock = Beast + Man
+	199. Lizard = Snake + Worm
+	200. Lobster = Scorpion + Water
+	201. Locomotive = Cart + Steam_Engine
+
+M's
+	202. Man = Golem + Life
+	202. Man = Beast + Life
+	203. Manure = Grass + Livestock
+	204. Mario = 1up + Man
+	205. McDonalds = Coca_Cola + Sandwich
+	206. Meat = Beast + Hunter
+	207. Mentos = Coca_Cola + Geyser
+	208. Mermaid = Woman + Fish
+	209. Metal = Fire + Stone
+	210. Metal_Golem = Metal + Life
+	211. Mexico = Tequila + Country
+	212. Microchip = Transistor + Transistor
+	213. Milk = Livestock + Man
+	213. Milk = Livestock + Grass
+	214. Mirror = Aliminium + Glass
+	215. Mite = Life + Dust
+	216. Mold = Mushroom + Mud
+	217. Molotov_Cocktail = Fire + Alcohol
+	218. Money = Coin + Paper
+	219. Moon = Cheese + Sky
+	220. Moss = Swamp + Algae
+	221. Motorboat = Boat + Combustion_Engine
+	222. Morotcycle = Bicycle + Combustion_Engine
+	223. Mouse = Cheese + Beast
+	224. Mud = Dust + Water
+	225. Mummy = Paper + Zombie
+	226. Museum = Brick_House + Fossil
+	227. Mushroom = Earth + Algae
+	228. Music = Sound + Idea
+
+O's
+	229. Obesity = Man + McDonalds
+	230. Old_Man = Man + Time
+	231. Omelette = Egg + Fire
+	232. Oxygen = Electricity + Water
+	233. Oxyhydrogen = Oxygen + Hydrogen
+	234. Ozone = Oxygen + Electricity
+
+P's
+	235. Panda = Tree + Beast
+	236. Paper = Reed + Tool
+	237. Pearl = Sand + Shells
+	238. Peat = Swamp + Tree
+	239. Penguin = Bird + Ice
+	240. Penicillin = Mold + Scientist
+	241. Perfume = Alcohol + Flower
+	242. Petri_Dish = Glass + Bacteria
+	243. Petroleum = Bitumen + Pressure
+	244. Philosophers_Stone = Philosophy + Stone
+	245. Philosophy = Dilemma + Scientist
+	246. Phoenix = Fire + Bird
+	247. Phone = Wire + Sound
+	248. Pie = Fruit + Dough
+	249. Pig = Livestock + Mud
+	250. Piggy Bank = Ceramics + Coin
+	251. Pillow = Feather + Cloth
+	252. Pinocchio = Wood + Life
+	253. Pizza = Cheese + Dough
+	254. Planet = Continent + Continent
+	255. Plankton = Bacteria + Water
+	256. Plesiosauria = Water + Dinosaur
+	257. Poison = Mushroom + Tool
+	258. Poisoned_Weapons = Arms + Poison
+	259. Pressure = Earth + Earth
+	260. Prisoner = Assassin + Time
+	261. Pterodactyl = Air + Dinosaur
+
+Q's
+	262. Quark = Soured_Milk + Fire
+	263. Quetzalcoatl = Snake + Bird
+
+R's
+	264. R2_D2 = Star_Wars + Robot
+	265. Rain = Water + Cloud
+	266. Rainbow = Light + Storm
+	267. Reed = Grass + Swamp
+	268. Robin_Hood = Forest + Hero
+	269. Robot = Metal_Golem + Electricity
+	270. Romania = Transylvania + Country
+	271. Ruby = Aluminium + Oxygen
+	272. Russia = Vodka + Country
+	273. Rust = Water + Metal
+
+S's
+	274. Sailboat = Boat + Cloth
+	275. Sailing_Ship = Cloth + Wooden_ship
+	276. Sailor = Man + Boat
+	277. Salamander = Lizard + Fire
+	278. Salo = Man + Pig
+	279. Salt = Sea + Fire
+	280. Saltpeter = Limestone + Manure
+	281. Sand = Water + Stone
+	281. Sand = Air + Stone
+	282. Sandstorm = Sand + Storm
+	283. Sandwich = Meat + Bread
+	284. Santa_Claus = Old_Man + Christmas_Tree
+	285. Saudi_Arabia = Petroleum + Country
+	286. Sauna = Steam + Hut
+	287. Scarab = Beetle + Manure
+	288. Scientist = Library + Man
+	289. Scissors = Knife + Knife
+	290. Scorpion = Beetle + Sand
+	291. Scotch_Whiskey = Alcohol + Peat
+	292. Scotland = Scotch_Whiskey + Country
+	293. Sea = Water + Water
+	294. Seed = Life + Sand
+	295. Sex = Man + Woman
+	296. Sex_and_the_City = Sex + City
+	297. Shells = Plankton + Stone
+	298. Sick = Man + Flu
+	299. Silicon = Pressure + Sand
+	300. Silk = China + Cloth
+	301. Silver = Moon + Metal
+	302. Sith = Jedi + Assassin
+	303. Sky = Air + Cloud
+	304. Skyscraper = Brick_House + Glass
+	305. Smoke = Tobacco + Fire
+	305. Smoke = Cigarettes + Fire
+	306. Snail = Shells + Worm
+	307. Snake = Swamp + Worm
+	307. Snake = Sand + Worm
+	308. Sniper = Assassin + Firearms
+	309. Soap = Ash + Fat
+	310. Soda_Water = Carbon_Dioxide + Water
+	311. Soldier = Firearms + Man
+	312. Sound = Metal + wind
+	313. Soured_Milk = Milk + Yogurt
+	314. Spinning_Wheel = Wheel + Wool
+	315. Stake = Wood + Knife
+	316. Star = Sun + Scientist
+	317. Star_Wars = Jedi + Sith
+	318. Statue = Stone + Tool
+	319. Statue_of_Liberty = USA + Statue
+	320. Steam = Air + Water
+	321. Steam_Engine = Boiler + Coal
+	322. Steamer = Steam_Engine + Wooden_Ship
+	323. Stone = Air + Lava
+	324. Storm = Air + Energy
+	325. Sugar = Lime + Reed
+	326. Sulfur = Bacteria + Swamp
+	327. Sun = Sky + Chariot
+	328. Sunflower = Sun + Flower
+	329. Sushi = Fish + Algae
+	330. Swamp = Earth + Water
+	331. Sweater = Yarn + Tool
+	332. Swine_Flu = Pig + Flu
+	333. Swiss_Army_Knife = Knife + Tool
+	334. Switzerland = Fondue + Country
+
+T's
+	335. Team = Beast + Cart
+	336. Tequila = Alcohol + Worm
+	337. The Beatles = Beetle + Beetle
+	338. Thread = Spinning_Wheel + Yarn
+	339. Thunderbird = Bird + Storm
+	340. Thunderstorm = Storm + Electricity
+	341. Time = Life + Hourglass
+	342. Toast = Fire + Bread
+	343. Tobacco = Fire + Grass
+	344. Tool = Man + Metal
+	345. Totoro = Forest + Ghost
+	346. Tractor = Lawn_Mower + Arable
+	347. Transformers = Car + Life
+	348. Transistor = Silicon + Electricity
+	349. Transylvania = Vampire + Country
+	350. Tree = Earth + Seed
+	351. Turtle = Sand + Egg
+	352. Twilight_Saga = Vampire + Werewolf
+	353. Typhoon = Storm + Water
+
+U's
+	354. UFO = Alien + Airplane
+	355. Ukraine = Salo + Country
+	356. Uncut_Diamond = Coal + Pressure
+	357. Undead = Zombie + Corpse
+	358. United_Kingdom = Beatles + Country
+	359. USA = Coca_Cola + Country
+
+V's
+	360. Vampire = Blood + Man
+	361. Venice = City + Water
+	362. Venus = Woman + Planet
+	363. Vicodin = Sick + Doctor
+	364. Vinegar = Alcohol + Oxygen
+	365. Vodka = Alcohol + Water
+	366. Volcano = Lava + Pressure
+	367. Vulture = Corpse + Bird
+	368. VW_Beetle = Car + Beetle
+
+W's
+	369. Warrior = Arms + Hunter
+	370. Weevil = Flour + Beetle
+	371. Werewolf = Beast + Vampire
+	372. Whale = Beast + Water
+	373. Wheat = Arable + Seed
+	374. Wheel = Tool + Wood
+	375. Whey = Soured_Milk + Fire
+	376. Wind = Air + Air
+	377. Wine = Grape + Alcohol
+	378. Wire = Thread + Copper
+	379. Wolf = Moon + Beast
+	380. Woman = Milk + Man
+	381. Wood = Tool + Tree
+	382. Wooden_Ship = Boat + Wood
+	383. Wool = Beast + Hunter
+	384. Worm = Earth + Plankton
+
+Y's
+	385. Yarn = Spinning_Wheel + Wool
+	386. Yoda = Jedi + Swamp
+	387. Yogurt = Bacteria + Milk
+	388. Yoshi = 1up + Egg
+
+Z's
+	389. Zombie = Fossil + Life
+	390. Zoo = Beast + Museum
+
+
