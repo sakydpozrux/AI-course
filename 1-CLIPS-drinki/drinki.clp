@@ -1,25 +1,24 @@
-;[TODO] dokumentacja tutaj
-; w komentarzu albo osobny plik README.md
+; 1. W czesci POSIADANE SKLADNIKI nalezy odkomentowac
+;    te ze skladnikow ktore sie posiada.
+; 2. clips
+; 3. (load drinki.clp)
+; 4. (reset) ;; <--- pisze ta instrukcje bo zawsze tego zapominalem
+; 5. (run)
 
 
 ; ======================
-;   TEMPLATES SECTION :
+;   TEMPLEJTY :
 ; ======================
 
 (deftemplate zamienniki (slot brak) (multislot zamien))
 
 (deftemplate drink_pattern
   (slot nazwa)
-  (multislot mocne_alkohole)
-  (multislot owoce)
-  (multislot slodziki)
-  (multislot napoje)
-  (multislot dodatki)
-  (multislot przyprawy)
+  (multislot skladniki)
 )
 
 ; ======================
-;    STARTUP FACTS :
+;  POSIADANE SKLADNIKI :
 ; ======================
 
 (deffacts startup
@@ -45,17 +44,17 @@
 
 ;;; ==================
 ;;; slodziki:
-  ;(niebieskie_curacao)
+  (niebieskie_curacao)
   ;(pomaranczowe_curacao)
   ;(grenadyna)
   ;(syrop_cukrowy)
   ;(likier_pomaranczowy)
-  ;(syrop_bananowy)
+  (syrop_bananowy)
   ;(syrop_malinowy)
   ;(amaretto)
-  ;(cukier_bialy)
-  ;(cukier_trzcinowy)
-  ;(miod)
+  (cukier_bialy)
+  (cukier_trzcinowy)
+  (miod)
 
 ;;; ==================
 ;;; napoje:
@@ -63,12 +62,12 @@
   ;(sok_slodzony)
   ;(woda_niegazowana)
   ;(piwo_imbirowe)
-  ;(wino_czerwone)
+  (wino_czerwone)
   ;(wino_imbirowe)
   ;(wino_wermut)
   ;(tonic)
   ;(cola)
-  ;(szampan)
+  (szampan)
 
 ;;; ==================
 ;;; dodatki:
@@ -88,6 +87,7 @@
 ;    ZAMIENNIKI :
 ; ======================
 
+(deffacts zamienniki
 ;;; =================
 ;;; mocne_alkohole:
   (zamienniki (brak whisky) (zamien rum wodka))
@@ -145,339 +145,179 @@
   (zamienniki (brak listki_miety) (zamien ))
   (zamienniki (brak tabasco) (zamien cynamon))
   (zamienniki (brak imbir) (zamien piwo_imbirowe wino_imbirowe))
-
+)
 
 ; ======================
 ;    WZORY DRINKÓW :
 ; ======================
 
+(deffacts wzory
 
-(drink_pattern (nazwa apple_jammy)
-  (mocne_alkohole whisky)
-  (owoce jablko)
-  (slodziki )
-  (napoje )
-  (dodatki )
-  (przyprawy cynamon)
+  (drink_pattern (nazwa apple_jammy)
+    (skladniki whisky jablko cynamon)
+  )
+
+  (drink_pattern (nazwa god_father)
+    (skladniki whisky amaretto)
+  )
+
+  (drink_pattern (nazwa jame_son_julep)
+    (skladniki whisky wino_wermut listki_miety)
+  )
+
+  (drink_pattern (nazwa new_yorker)
+    (skladniki whisky cytryna wino_czerwone)
+  )
+
+  (drink_pattern (nazwa port_whisky_punch)
+    (skladniki whisky pomarancza zurawina wino_czerwone)
+  )
+
+  (drink_pattern (nazwa pszczolka_na_rozy)
+    (skladniki whisky grejpfrut  miod)
+  )
+
+  (drink_pattern (nazwa summer_crash)
+    (skladniki whisky cytryna ananas jablko)
+  )
+
+  (drink_pattern (nazwa ward_eight)
+    (skladniki whisky cytryna grenadyna)
+  )
+
+  (drink_pattern (nazwa watermellon_and_mint_collins)
+    (skladniki whisky cytryna arbuz listki_miety)
+  )
+
+  (drink_pattern (nazwa whisky_breeze)
+    (skladniki whisky zurawina grejpfrut)
+  )
+
+  (drink_pattern (nazwa whisky_cobbler)
+    (skladniki whisky ananas pomarancza cytryna pomaranczowe_curacao)
+  )
+
+  (drink_pattern (nazwa whisky_ginger_beer)
+    (skladniki whisky piwo_imbirowe)
+  )
+
+  (drink_pattern (nazwa whisky_mac)
+    (skladniki whisky wino_imbirowe)
+  )
+
+
+  (drink_pattern (nazwa sunrise)
+    (skladniki wodka pomarancza grenadyna)
+  )
+
+  (drink_pattern (nazwa banana_ivanov)
+    (skladniki wodka banan cytryna limonka syrop_bananowu)
+  )
+
+  (drink_pattern (nazwa blue_lagoon)
+    (skladniki wodka cytryna limonka niebieskie_curacao sprite)
+  )
+
+  (drink_pattern (nazwa classic_martini)
+    (skladniki wodka wino_wermut)
+  )
+
+  (drink_pattern (nazwa kamikaze)
+    (skladniki wodka limonka likier_pomaranczowy)
+  )
+
+  (drink_pattern (nazwa lemon_drop_tini)
+    (skladniki wodka cytryna likier_pomaranczowy syrop_cukrowy)
+  )
+
+  (drink_pattern (nazwa seabreeze)
+    (skladniki wodka zurawina grejpfrut)
+  )
+
+  (drink_pattern (nazwa warszawska_herbatka)
+    (skladniki wodka cytryna syrop_cukrowy szampan)
+  )
+
+  (drink_pattern (nazwa wiaderko_oposa)
+    (skladniki wodka limonka cukier_trzcinowy sprite)
+  )
+
+  (drink_pattern (nazwa wybora-bora)
+    (skladniki wodka ananas limonka grenadyna piwo_imbirowe)
+  )
+
+  (drink_pattern (nazwa wsciekly_pies)
+    (skladniki wodka syrop_malinowy tabasco)
+  )
+
+  (drink_pattern (nazwa 3001)
+    (skladniki wodka limonka ananas niebieskie_curacao tonic sprite)
+  )
+
+
+
+  (drink_pattern (nazwa miodowe_daiquiri)
+    (skladniki rum limonka miod)
+  )
+
+  (drink_pattern (nazwa anatro)
+    (skladniki rum ananas cytryna likier_pomaranczowy syrop_cukrowy)
+  )
+
+  (drink_pattern (nazwa blue_hawaii)
+    (skladniki rum limonka ananas niebieskie_curacao syrop_cukrowy)
+  )
+
+  (drink_pattern (nazwa cuba_libre)
+    (skladniki rum limonka cola)
+  )
+
+  (drink_pattern (nazwa culto_a_la_vida)
+    (skladniki rum cytryna limonka zurawina cukier_bialy)
+  )
+
+  (drink_pattern (nazwa el_presidente)
+    (skladniki rum owoce ananas limonka grenadyna)
+  )
+
+  (drink_pattern (nazwa ginger_mojito)
+    (skladniki rum limonka cukier_trzcinowy piwo_imbirowe imbir listki_miety)
+  )
+
+  (drink_pattern (nazwa plaze_havany)
+    (skladniki rum owoce ananas syrop_cukrowy)
+  )
+
+  (drink_pattern (nazwa larchmont)
+    (skladniki rum limonka likier_pomaranczowy syrop_cukrowy)
+  )
+
+  (drink_pattern (nazwa pineapple_mai_tai)
+    (skladniki rum ananas pomarancza limonka likier_pomaranczowy grenadyna)
+  )
+
+  (drink_pattern (nazwa wow)
+    (skladniki rum limonka likier_pomaranczowy syrop_cukrowy)
+  )
 )
 
 
-(drink_pattern (nazwa god_father)
-  (mocne_alkohole whisky)
-  (owoce )
-  (slodziki amaretto)
-  (napoje )
-  (dodatki )
-  (przyprawy )
+; ======================
+;  REGULY WNIOSKOWANIA :
+; ======================
+
+(defrule czy_jest_skladnikiem
+  (drink_pattern (nazwa ?nazwa) (skladniki $? ?skladnik $?))
+  =>
+  ;(assert (jest_skladnikiem ?skladnik ?drink))
+  (printout t "z " ?skladnik " mozna zrobic " ?nazwa crlf)
 )
 
-(drink_pattern (nazwa jame_son_julep)
-  (mocne_alkohole whisky)
-  (owoce )
-  (slodziki )
-  (napoje wino_wermut)
-  (dodatki )
-  (przyprawy listki_miety)
-)
-
-(drink_pattern (nazwa new_yorker)
-  (mocne_alkohole whisky)
-  (owoce cytryna)
-  (slodziki )
-  (napoje wino_czerwone)
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa port_whisky_punch)
-  (mocne_alkohole whisky)
-  (owoce pomarancza zurawina)
-  (slodziki )
-  (napoje wino_czerwone)
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa pszczolka_na_rozy)
-  (mocne_alkohole whisky)
-  (owoce grejpfrut)
-  (slodziki miod)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa summer_crash)
-  (mocne_alkohole whisky)
-  (owoce cytryna ananas jablko)
-  (slodziki )
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa ward_eight)
-  (mocne_alkohole whisky)
-  (owoce cytryna)
-  (slodziki grenadyna)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa watermellon_and_mint_collins)
-  (mocne_alkohole whisky)
-  (owoce cytryna arbuz)
-  (slodziki )
-  (napoje )
-  (dodatki )
-  (przyprawy listki_miety)
-)
-
-(drink_pattern (nazwa whisky_breeze)
-  (mocne_alkohole whisky)
-  (owoce zurawina grejpfrut)
-  (slodziki )
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa whisky_cobbler)
-  (mocne_alkohole whisky)
-  (owoce ananas pomarancza cytryna)
-  (slodziki pomaranczowe_curacao)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa whisky_ginger_beer)
-  (mocne_alkohole whisky)
-  (owoce )
-  (slodziki )
-  (napoje piwo_imbirowe)
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa whisky_mac)
-  (mocne_alkohole whisky)
-  (owoce )
-  (slodziki )
-  (napoje wino_imbirowe)
-  (dodatki )
-  (przyprawy )
-)
-
-
-(drink_pattern (nazwa sunrise)
-  (mocne_alkohole wodka)
-  (owoce pomarancza)
-  (slodziki grenadyna)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa banana_ivanov)
-  (mocne_alkohole wodka)
-  (owoce banan cytryna limonka)
-  (slodziki syrop_bananowu)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa blue_lagoon)
-  (mocne_alkohole wodka)
-  (owoce cytryna limonka)
-  (slodziki niebieskie_curacao)
-  (napoje sprite)
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa classic_martini)
-  (mocne_alkohole wodka)
-  (owoce )
-  (slodziki )
-  (napoje wino_wermut)
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa kamikaze)
-  (mocne_alkohole wodka)
-  (owoce limonka)
-  (slodziki likier_pomaranczowy)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa lemon_drop_tini)
-  (mocne_alkohole wodka)
-  (owoce cytryna)
-  (slodziki likier_pomaranczowy syrop_cukrowy)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa seabreeze)
-  (mocne_alkohole wodka)
-  (owoce zurawina grejpfrut)
-  (slodziki )
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa warszawska_herbatka)
-  (mocne_alkohole wodka)
-  (owoce cytryna)
-  (slodziki syrop_cukrowy)
-  (napoje szampan)
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa wiaderko_oposa)
-  (mocne_alkohole wodka)
-  (owoce limonka)
-  (slodziki cukier_trzcinowy)
-  (napoje sprite)
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa wybora-bora)
-  (mocne_alkohole wodka)
-  (owoce ananas limonka)
-  (slodziki grenadyna)
-  (napoje piwo_imbirowe)
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa wsciekly_pies)
-  (mocne_alkohole wodka)
-  (owoce )
-  (slodziki syrop_malinowy)
-  (napoje )
-  (dodatki )
-  (przyprawy tabasco)
-)
-
-(drink_pattern (nazwa 3001)
-  (mocne_alkohole wodka)
-  (owoce limonka ananas)
-  (slodziki niebieskie_curacao)
-  (napoje tonic sprite)
-  (dodatki )
-  (przyprawy )
-)
-
-
-
-(drink_pattern (nazwa miodowe_daiquiri)
-  (mocne_alkohole rum)
-  (owoce limonka)
-  (slodziki miod)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa anatro)
-  (mocne_alkohole rum)
-  (owoce ananas cytryna)
-  (slodziki likier_pomaranczowy syrop_cukrowy)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa blue_hawaii)
-  (mocne_alkohole rum)
-  (owoce limonka ananas)
-  (slodziki niebieskie_curacao syrop_cukrowy)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa cuba_libre)
-  (mocne_alkohole rum)
-  (owoce limonka)
-  (slodziki )
-  (napoje cola)
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa culto_a_la_vida)
-  (mocne_alkohole rum)
-  (owoce cytryna limonka zurawina)
-  (slodziki cukier_bialy)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa el_presidente)
-  (mocne_alkohole rum)
-  (owoce ananas limonka)
-  (slodziki grenadyna)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa ginger_mojito)
-  (mocne_alkohole rum)
-  (owoce limonka)
-  (slodziki cukier_trzcinowy)
-  (napoje piwo_imbirowe)
-  (dodatki )
-  (przyprawy imbir listki_miety)
-)
-
-(drink_pattern (nazwa plaze_havany)
-  (mocne_alkohole rum)
-  (owoce ananas)
-  (slodziki syrop_cukrowy)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa larchmont)
-  (mocne_alkohole rum)
-  (owoce limonka)
-  (slodziki likier_pomaranczowy syrop_cukrowy)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa pineapple_mai_tai)
-  (mocne_alkohole rum)
-  (owoce ananas pomarancza limonka)
-  (slodziki likier_pomaranczowy grenadyna)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-(drink_pattern (nazwa wow)
-  (mocne_alkohole rum)
-  (owoce limonka)
-  (slodziki likier_pomaranczowy syrop_cukrowy)
-  (napoje )
-  (dodatki )
-  (przyprawy )
-)
-
-
+;(defrule pasuja_wszystkie_skladniki
+;  ;(drink_pattern (?nazwa)
+;  (while (TRUE)
+;    (drink_pattern (nazwa ?nazwa) (skladniki $? ?skladnik $?))
+;  )
+;  =>
+;  (printout t "SKLADNIK JAKIS: " ?skladnik crlf)
+;)
