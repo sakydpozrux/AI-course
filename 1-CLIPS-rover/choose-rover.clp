@@ -238,15 +238,11 @@
   (ask "Do you want to go to some far place where you cant repair rover by yourself or recharge the battery (e.g. Mars)?")
   (switch (get_answer)
     (case *y* then
-      (assert (can_be_seen)))
+      (assert (far_lands)))
     (case *n* then
-      (assert (cannot_be_seen)))
+      (assert (close_lands))
     (case *u* then
-      (assert(can_be_seen))
-      (assert(cannot_be_seen)))
-  y -> (assert (far_lands))
-  n -> (assert (close_lands))
-  u -> (assert (far_lands))
+      (assert (far_lands)))
   )
 )
 
@@ -257,15 +253,11 @@
   (ask "Can you use oxygen? Is there oxygen in atmosphere?")
   (switch (get_answer)
     (case *y* then
-      (assert (can_be_seen)))
+      (assert (oxygen)))
     (case *n* then
-      (assert (cannot_be_seen)))
+      (assert (no_oxygen)))
     (case *u* then
-      (assert(can_be_seen))
-      (assert(cannot_be_seen)))
-  y -> (assert (oxygen))
-  n -> (assert (no_oxygen)
-  u -> (assert (no_oxygen))
+      (assert (no_oxygen)))
   )
 )
 
@@ -277,15 +269,14 @@
   (ask "Do you have a possibility to build a nuclear power plant?")
   (switch (get_answer)
     (case *y* then
-      (assert (can_be_seen)))
+      (assert (electric))
+      (assert (nuclear_power))
     (case *n* then
-      (assert (cannot_be_seen)))
+      (assert (electric))
+      (assert (solar_power)))
     (case *u* then
-      (assert(can_be_seen))
-      (assert(cannot_be_seen)))
-  y -> (assert (electric)) + (assert (nuclear_power))
-  n -> (assert (electric)) + (assert (solar_power))
-  u -> (assert (electric)) + (assert (solar_power))
+      (assert (electric))
+      (assert (solar_power)))
   )
 )
 
@@ -295,15 +286,11 @@
   (ask "Is ability to self-replicate rover necessary?")
   (switch (get_answer)
     (case *y* then
-      (assert (can_be_seen)))
-    (case *n* then
-      (assert (cannot_be_seen)))
+      (assert (3d-printer))
+      (assert (no_metal)))
     (case *u* then
-      (assert(can_be_seen))
-      (assert(cannot_be_seen)))
-  y -> (assert (3d-printer)) (assert (no_metal))
-  n ->
-  u -> (assert (3d-printer)) (assert (no_metal))
+      (assert (3d-printer))
+      (assert (no_metal)))
   )
 )
 
@@ -314,15 +301,11 @@
   (ask "Do you need an ability to climb on stairs?")
   (switch (get_answer)
     (case *y* then
-      (assert (can_be_seen)))
+      (assert (stairs_servo)))
     (case *n* then
       (assert (cannot_be_seen)))
     (case *u* then
-      (assert(can_be_seen))
-      (assert(cannot_be_seen)))
-  y -> (assert (stairs_servo))
-  n -> 
-  u -> (assert (manipulator_arm))
+      (assert (manipulator_arm)))
   )
 )
 
