@@ -1,0 +1,38 @@
+1. Temat
+---------
+
+System ekspercki wspierający konstrukcje łazika - jeżdżącego robota.
+Źródłem wiedzy dla programu jest wiedza własna.
+
+
+2. Opis przypadków testowych
+-----------------------------
+
+Program uruchamia się klasycznie, tak jak większość innych programów CLIPSa, wpisując w interpreterze CLIPSa kolejno:
+> (load choose-rover.clp)
+> (reset)
+> (run)
+
+Następnie należy odpowiadać na zadawane przez system pytania.
+
+Podczas testu zasymulowałem chęć konstrukcji łazika marsjańskiego do zastosowań militarnych w nielegalnych celach. Program z racji niskiego stężenia tlenu w marsjańskiej atmosferze niezbędnego w procesie spalania, które jest niezbędne dla silników spalinowych, słusznie zasugerował zastosowanie silników elektrycznych oraz dedykowanego minireaktora jądrowego. System miał mieć wbudowany mechanizm informowania policji o możliwości popełnienia przestępstwa, w przypadku kiedy użytkownik w odpowiedzi na jedno z pytań przyzna się do próby nielegalnego przekroczenia granicy z Marsem. Niestety tym razem ten system nie zadziałał.
+
+
+3. Ocena i wnioski
+------------------
+
+System, opierając się na odpowiedziach użytkownika na zadawane pytania, stara się być pomocny w procesie konstruowania łazika. Niestety z racji małej bazy wiedzy, jego odpowiedzi są zazwyczaj zbyt ogólne i trywialne, by ten system miał praktyczne zastosowanie w rzeczywistości.
+
+System okazał się bezużyteczny dla wsparcia konstrukcji robotów do symulowanych głębinowych kopalni torfu. W jednym z testów zaproponował wykorzystanie - do zasilania pod ziemią - paneli słonecznych.
+
+W mojej ocenie system działa irracjonalnie i potrzebne by było dużo czasu i wysiłku, żeby doprowadzić go do wersji wolnej od krytycznych błędów logicznych i dającej się przy niskim ryzyku zastosować w systemach produkcyjnych.
+
+
+4. Pomysły na dalszy rozwój
+----------------------------
+
+ - Pierwszy patch polegałby na zmianie tematu na "System ekspercki wspierający konstrukcje łazika - robota jężdżącego NA POWIERZCHNI.". Wyeliminowałoby to buga z sugerowaniem paneli słonecznych do robotów podziemnych.
+ - Przebudowa struktury kodu źródłowego. Żałuję, że od razu nie zacząłem tego inaczej pisać korzystając z szablonów. Szacuję, że kod mający analogiczny efekt, byłby wtedy czytelniejszy i około 3-krotnie krótszy.
+ - Poszerzenie bazy wiedzy o bardziej szczegółowe informacje, takie jak konkretne rodzaje kół, urządzeń komunikacyjnych, czujników, itp. .
+ - Szacowanie całkowitego kosztu konstrukcji w Eurogąbkach.
+ - Gdybym miał jeszcze jeden weekend czasu to zrobiłbym ładny interfejs graficzny z wykorzystaniem Pythona, bibliotek Qt, modułu PyCLIPS i API do naszej-klasy.
