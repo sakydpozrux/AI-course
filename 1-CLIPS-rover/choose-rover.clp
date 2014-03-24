@@ -459,13 +459,6 @@
   (advice "I'm also calling police right now because of your illegal plans. Better hide.")
 )
 
-(defrule adv-mylar
-  (time-for-advices)
-  (mylar)
-  =>
-  (advice "I see it's very strange project. To reflect heat you can use mylar fiber. Spy drones won't see your rover.")
-)
-
 (defrule adv-3d-printer
   (time-for-advices)
   (3d-printer)
