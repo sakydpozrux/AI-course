@@ -13,19 +13,17 @@
   (beginning)
   =>
   (printout t "For each question are possible 3 answers:" crlf)
-  (printout t "y, n, u (they meaning -> yes, no, unknown)" crlf)
+  (printout t "y, n, u (they are meaning -> yes, no, unknown)" crlf)
   (printout t "You write them after the '>' symbol appears" crlf)
   (assert (questions))
 )
 
 
-; ---------- ;
-; Questions: ;
-
 (deffunction ask (?question)
   (printout t crlf ?question)
   (printout t crlf " > ")
 )
+
 
 (deffunction get_answer ()
   (bind ?answer (read))       
@@ -35,6 +33,12 @@
     (default *u*)
   )
 )
+
+
+
+; ---------- ;
+; Questions: ;
+
 
 (defrule in_or_out
   (questions)
@@ -117,7 +121,7 @@
 (defrule if_darkness
   (camera)
   =>
-  (ask "Are you going to sometimes use rover in dark places?")
+  (ask "Are you going to use rover in dark places sometimes?")
   (switch (get_answer)
     (case *y* then
       (assert (dark)))
@@ -165,9 +169,9 @@
   (ask "Do you want to grab things or move them?")
   (switch (get_answer)
     (case *y* then
-      (assert (manipulator_arm))
+      (assert (manipulator_arm)))
     (case *u* then
-      (assert (manipulator_arm))
+      (assert (manipulator_arm)))
   )
 )
 
@@ -240,7 +244,7 @@
     (case *y* then
       (assert (far_lands)))
     (case *n* then
-      (assert (close_lands))
+      (assert (close_lands)))
     (case *u* then
       (assert (far_lands)))
   )
@@ -270,7 +274,7 @@
   (switch (get_answer)
     (case *y* then
       (assert (electric))
-      (assert (nuclear_power))
+      (assert (nuclear_power)))
     (case *n* then
       (assert (electric))
       (assert (solar_power)))
@@ -283,6 +287,7 @@
 
 (defrule if_replicate
   (far_lands)
+  =>
   (ask "Is ability to self-replicate rover necessary?")
   (switch (get_answer)
     (case *y* then
@@ -315,10 +320,12 @@
 
 (defrule this-was-last-question
   (declare (salience -1000))
-  (?q <- (questions))
+  (questions)
+  ?q <- (questions)
   =>
   (retract ?q)
   (assert (time-for-advices))  
+  (printout t crlf crlf)
 )
 
 
@@ -356,14 +363,16 @@
 
 (defrule if_gas_engine_possible
   (no_oxygen)
-  (?g <- (gas_engine))
+  (gas_engine)
+  ?g <- (gas_engine)
   =>
   (retract ?g)
 )
 
 (defrule metal_parts_in_engine
   (no_metal)
-  (?g <- (gas_engine))
+  (gas_engine)
+  ?g <- (gas_engine)
   =>
   (retract ?g)
 )
@@ -372,7 +381,246 @@
 ; -------- ;
 ; Advices: ;
 
-;(defrule xxxx
-; (time-for-advices)
-; =>
-; asd
+(deffunction advice (?what)
+  (printout t ?what crlf)
+)
+
+
+(defrule adv-bad_weather
+  (time-for-advices)
+  (bad_weather)
+  =>
+  (advice "Because rover may be used during bad weather - you should consider using better quality materials to build the frame.")
+)
+
+(defrule adv-autonomous
+  (time-for-advices)
+  (autonomous)
+  =>
+  (advice "You have to know something about Artifical Intelligence. Better read few books before starting programming.")
+)
+
+(defrule adv-control
+  (time-for-advices)
+  (control)
+  =>
+  (advice "You need to design GUI for rover control software and choose appriopriate transmission devices.")
+)
+
+(defrule adv-control-autonomous
+  (time-for-advices)
+  (control)
+  (autonomous)
+  =>
+  (advice "There are many programming tasks. Consider hiring at least 2 programmmers.")
+)
+
+(defrule adv-long-range
+  (time-for-advices)
+  (long_range)
+  =>
+  (advice "For long range communication consider using RF technology or WiFi with good quality directional antenna.")
+)
+
+(defrule adv-medium-range
+  (time-for-advices)
+  (medium_range)
+  =>
+  (advice "For mid-range transmission WiFi with good omnidirectional antenna should be enough.")
+)
+
+(defrule adv-close-range
+  (time-for-advices)
+  (close_range)
+  =>
+  (advice "For close range communication you can use cheap omnidirectional antenna and WiFi technology.")
+)
+
+(defrule adv-mylar-legal
+  (time-for-advices)
+  (mylar)
+  (not (call_the_police))
+  =>
+  (advice "I trust you it's fully legal business. Consider using mylar fiber to be invisible for criminals night vision devices.")
+)
+
+(defrule adv-mylar-illegal
+  (time-for-advices)
+  (mylar)
+  (call_the_police)
+  =>
+  (advice "I see it's very strange project. To reflect heat you can use mylar fiber. Spy drones won't see you and your rover doing bad things.")
+)
+
+(defrule adv-police
+  (time-for-advices)
+  (call_the_police)
+  =>
+  (advice "I'm also calling police right now because of your illegal plans. Better hide.")
+)
+
+(defrule adv-mylar
+  (time-for-advices)
+  (mylar)
+  =>
+  (advice "I see it's very strange project. To reflect heat you can use mylar fiber. Spy drones won't see your rover.")
+)
+
+(defrule adv-3d-printer
+  (time-for-advices)
+  (3d-printer)
+  =>
+  (advice "To replicate you need something like 3D-printer.")
+)
+
+(defrule adv-no-metal
+  (time-for-advices)
+  (no_metal)
+  =>
+  (advice "Unfortunately current technology doesn't allow us to replicate things with metal elements. You should build rover from only plastic things.")
+)
+
+(defrule adv-oxygen
+  (time-for-advices)
+  (oxygen)
+  =>
+  (advice "If there will be oxygen - great! You probably can grow plants and make even more oxygen.")
+)
+
+(defrule adv-no-oxygen
+  (time-for-advices)
+  (no_oxygen)
+  =>
+  (advice "If you won't find oxygen - your rover won't breathe. In particular your gas engine won't work if you want to use on. Elecricity is better.")
+)
+
+(defrule adv-gas-engine
+  (time-for-advices)
+  (gas_engine)
+  =>
+  (advice "Looks like you can try gas engine.")
+)
+
+(defrule adv-electric
+  (time-for-advices)
+  (electric)
+  =>
+  (advice "Electric engine fits good.")
+)
+
+(defrule adv-turn-wheels
+  (time-for-advices)
+  (turn)
+  (wheels)
+  =>
+  (advice "To make a full turn in place you can't use wheels with thin tread. Using broad one would be reasonable.")
+)
+
+(defrule adv-turn-tracks
+  (time-for-advices)
+  (turn)
+  (tracks)
+  =>
+  (advice "You can make a full turn with almost every pair of tracks you can use.")
+)
+
+(defrule adv-nuclear-power
+  (time-for-advices)
+  (nuclear_power)
+  =>
+  (advice "Nuclear power is great in such projects if you are able to get it. Your rover will work a dozen of years before discharge.")
+)
+
+(defrule adv-solar-power
+  (time-for-advices)
+  (solar_power)
+  =>
+  (advice "You can also power your rover by solar power.")
+)
+
+(defrule adv-good-wheels
+  (time-for-advices)
+  (good_wheels)
+  =>
+  (advice "Better buy good quality wheels.")
+)
+
+(defrule adv-wheel-servos
+  (time-for-advices)
+  (wheel_servos)
+  =>
+  (advice "Small servoengines would be helpful to make a turn. Consider buying at least 2.")
+)
+
+(defrule adv-stairs-servo
+  (time-for-advices)
+  (stairs_servo)
+  =>
+  (advice "If you want to climb stairs you should use an additional arm to help your rover in doing this.")
+)
+
+(defrule adv-manipulator-arm
+  (time-for-advices)
+  (manipulator_arm)
+  =>
+  (advice "With manipulator arm you can grab things and move them. You can try it also to climb stairs.")
+)
+
+(defrule adv-wheels
+  (time-for-advices)
+  (wheels)
+  =>
+  (advice "You can use wheels.")
+)
+
+(defrule adv-tracks
+  (time-for-advices)
+  (tracks)
+  =>
+  (advice "You may find tracks appriopriate for your task.")
+)
+
+(defrule adv-far-lands
+  (time-for-advices)
+  (far_lands)
+  =>
+  (advice "You may encounter various problems with connection (disconnections and delay) when rover will be far from you. Test your connectivity before using your rover in practice.")
+)
+
+(defrule adv-many-sensors
+  (time-for-advices)
+  (many_sensors)
+  =>
+  (advice "The rover should be equiped with many sensors.")
+)
+
+(defrule adv-using-camera-in-darkness
+  (time-for-advices)
+  (using_camera_in_darkness)
+  =>
+  (advice "Buy tested cameras only with good optics. It will be necessary to have at least one good quality camera in darkness.")
+)
+
+(defrule adv-torchlight
+  (time-for-advices)
+  (torchlight)
+  =>
+  (advice "Equip your rover with simple torchlight.")
+)
+
+(defrule adv-night_vision_device
+  (time-for-advices)
+  (night_vision_device)
+  =>
+  (advice "You don't want to be seen so night vision device also seems to be good advice.")
+)
+
+(defrule adv-no_camera
+  (time-for-advices)
+  (no_camera)
+  =>
+  (advice "It seems that camera is redundant in your project. You don't have to equip your robot with it.")
+)
+
+
+
