@@ -1,0 +1,15 @@
+Spostrzeżenia:
+
+  - każdy z graczy ma 12 pionków początkowych
+  - plansza ma puste pole w prawym dolnym rogu
+
+Moje pomysły:
+
+  - Zmieniać strategię w zależności od czasu gry / liczby pionków na planszy. Zacząć strategią prostą, bo ona
+    się sprawdza na początku, a potem zmienić na funkcję trzech obszarów.
+  - Jeśli mam pewną damkę (tzn. brakuje jednego kroku żeby ją zdobyć), to lepiej się nie pchać byle zdobyć damkę i
+    stracić pionka, tylko najpierw uciec pionkiem, a później zdobyć damkę. Czyli wygląda na to, że damka nie może
+    być warta więcej niż dwukrotność pionka (nalepiej trochę mniej niż dwukrotność).
+  - Mogę dać większą wartość pionkom stojącym na polach broniących
+  - Może korzystać z bazy danych otwarć?
+
