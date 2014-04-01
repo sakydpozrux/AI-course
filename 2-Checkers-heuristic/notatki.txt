@@ -2,6 +2,8 @@ Spostrzeżenia:
 
   - każdy z graczy ma 12 pionków początkowych
   - plansza ma puste pole w prawym dolnym rogu
+  - Chinook nie wygrywa, ale stara sie nie przegrac doprowadzajac do remisu. Unika tych ruchow, gdzie wygrywa
+    przeciwnik.
 
 Moje pomysły:
 
@@ -12,4 +14,5 @@ Moje pomysły:
     być warta więcej niż dwukrotność pionka (nalepiej trochę mniej niż dwukrotność).
   - Mogę dać większą wartość pionkom stojącym na polach broniących
   - Może korzystać z bazy danych otwarć?
+  - Funkcja wagowa: # zagrozonych pionkow, # bronionych pionkow, # kwadratow kontrolowanych na srodku planszy
 
