@@ -12,6 +12,18 @@ public class EvaluatePosition // This class is required - don't remove it
 	{
 		return _color;
 	}
+
+  static private int evalPos_simpleCount(AIBoard board)
+  {
+    // TODO
+  }
+  
+  static private int evalPos_chooseMethod(AIBoard board)
+  {
+    // TODO
+    // In function below you should use something like "switch evalPos_chooseMethod(board) {...} "  
+  }
+  
 	static public int evaluatePosition(AIBoard board) // This method is required and it is the major heuristic method - type your code here
 	{
 		int myRating=0;

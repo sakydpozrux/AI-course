@@ -15,4 +15,6 @@ Moje pomysły:
   - Mogę dać większą wartość pionkom stojącym na polach broniących
   - Może korzystać z bazy danych otwarć?
   - Funkcja wagowa: # zagrozonych pionkow, # bronionych pionkow, # kwadratow kontrolowanych na srodku planszy
+  - Wagi poszczegolnych zdarzen i pionkow zakodzone jako zmienne, tak zebym mogl je latwo zmienic dla wszystkich
+    heurystyk
 
