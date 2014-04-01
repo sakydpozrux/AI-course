@@ -23,17 +23,17 @@ public class EvaluatePosition // This class is required - don't remove it
     public int     getY()   { return _y; }
     public boolean ifKing() { return _isKing; }
     
-    public boolean ifOnBorder
+    public boolean ifOnBorder()
     {
       return false; // TODO
     }
     
-    public boolean ifOnMid
+    public boolean ifOnMid()
     {
       return false; // TODO
     }
     
-    public boolean ifOnCenter
+    public boolean ifOnCenter()
     {
       return false; // TODO
     }
