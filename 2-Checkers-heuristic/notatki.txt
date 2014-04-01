@@ -13,7 +13,8 @@ Moje pomysły:
     stracić pionka, tylko najpierw uciec pionkiem, a później zdobyć damkę. Czyli wygląda na to, że damka nie może
     być warta więcej niż dwukrotność pionka (nalepiej trochę mniej niż dwukrotność).
   - Mogę dać większą wartość pionkom stojącym na polach broniących
-  - Może korzystać z bazy danych otwarć?
+  - Może korzystać z bazy danych otwarć? [NIE PRZEJDZIE - brak możliwości modyfikowania czegokolwiek poza funkcją
+    heurystyczną]
   - Funkcja wagowa: # zagrozonych pionkow, # bronionych pionkow, # kwadratow kontrolowanych na srodku planszy
   - Wagi poszczegolnych zdarzen i pionkow zakodzone jako zmienne, tak zebym mogl je latwo zmienic dla wszystkich
     heurystyk
