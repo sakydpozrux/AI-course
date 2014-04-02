@@ -6,7 +6,7 @@ import java.util.*;
 
 public class EvaluatePosition // This class is required - don't remove it
 {
-  static public class Checker
+  public class Checker
   {
     private int _x;
     private int _y;
