@@ -16,11 +16,6 @@ public class EvaluatePosition // This class is required - don't remove it
 		return _color;
 	}
 	
-	static int rotateCoordinates(int n, int size)
-  {
-    return size - 1 - n;
-  }
-	
 	
 
 	static private final int BEGINNING = 111;
@@ -57,6 +52,11 @@ public class EvaluatePosition // This class is required - don't remove it
   
   static private int size;
   
+ 
+	static int rotateCoordinates(int n)
+  {
+    return size - 1 - n;
+  }
   
   static private int dist(int x1, int y1, int x2, int y2)
   {
@@ -173,14 +173,21 @@ public class EvaluatePosition // This class is required - don't remove it
 		return rating;
   }
   
-  static int evaluateWinning(int[][] pieces, int count)
-  { //TODO
+  static int evaluateWinning(int[][] pieces, int count, int[][] enemies, int enemiesCount)
+  {
 		int rating = 0;
 		
+		int x;
+		int y;
 		for (int i = 0; i < count; ++i)
 		{
+		  x = pieces[i][0];
+		  y = pieces[i][1];
+		  
 		  if (pieces[i][2] == KING) rating += king_val;
 		  rating += piece_val;
+		  
+		  rating += 2 * dist_bonus(x, y, rotateCoordinates(enemies[0][0]), rotateCoordinates(enemies[0][1])); 
 		}
 
 		return rating;
@@ -200,8 +207,8 @@ public class EvaluatePosition // This class is required - don't remove it
 		  if (pieces[i][2] == KING) rating += king_val;
 		  rating += piece_val;
 		  
-		  rating += dist_bonus(x, y, 0, 0); // to left upper corner
-		  rating += dist_bonus(x, y, size - 1, size - 1); // to right lower corner
+		  rating += 2 * dist_bonus(x, y, 0, 0); // to left upper corner
+		  rating += 2 * dist_bonus(x, y, size - 1, size - 1); // to right lower corner
 		}
 
 		return rating;
@@ -241,13 +248,13 @@ public class EvaluatePosition // This class is required - don't remove it
         break;
       
       case END_YELLOW_WINNING:
-        ratingYellow = evaluateWinning(yellowPieces, yellowCount);
+        ratingYellow = evaluateWinning(yellowPieces, yellowCount, redPieces, redCount);
         ratingRed    = evaluateLosing(redPieces, redCount);
         break;
       
       default: //case END_RED_WINNING:
         ratingYellow = evaluateLosing(yellowPieces, yellowCount);
-        ratingRed    = evaluateWinning(redPieces, redCount);
+        ratingRed    = evaluateWinning(redPieces, redCount, redPieces, redCount);
         break;
     }
     
@@ -293,8 +300,8 @@ public class EvaluatePosition // This class is required - don't remove it
 				  if (board._board[i][j].white) // this is upper, yellow piece
 					{
 					  yellowCount += 1;
-					  yellowPieces[yellowCount][0] = rotateCoordinates(i, size);
-					  yellowPieces[yellowCount][1] = rotateCoordinates(j, size);
+					  yellowPieces[yellowCount][0] = rotateCoordinates(i);
+					  yellowPieces[yellowCount][1] = rotateCoordinates(j);
 					  yellowPieces[yellowCount][2] = board._board[i][j].king ? 1 : 0;
 					  ++yellowCount;
 					}
