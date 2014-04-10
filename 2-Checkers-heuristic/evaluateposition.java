@@ -187,7 +187,7 @@ public class EvaluatePosition // This class is required - don't remove it
 		  if (pieces[i][2] == KING) rating += king_val;
 		  rating += piece_val;
 		  
-		  rating += 2 * dist_bonus(x, y, rotateCoordinates(enemies[0][0]), rotateCoordinates(enemies[0][1])); 
+		  rating += Math.sqrt(dist_bonus(x, y, rotateCoordinates(enemies[0][0]), rotateCoordinates(enemies[0][1]))); 
 		}
 
 		return rating;
@@ -207,8 +207,8 @@ public class EvaluatePosition // This class is required - don't remove it
 		  if (pieces[i][2] == KING) rating += king_val;
 		  rating += piece_val;
 		  
-		  rating += 2 * dist_bonus(x, y, 0, 0); // to left upper corner
-		  rating += 2 * dist_bonus(x, y, size - 1, size - 1); // to right lower corner
+		  rating += dist_bonus(x, y, 0, 0); // to left upper corner
+		  rating += dist_bonus(x, y, size - 1, size - 1); // to right lower corner
 		}
 
 		return rating;
