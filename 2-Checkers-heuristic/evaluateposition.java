@@ -56,6 +56,25 @@ public class EvaluatePosition // This class is required - don't remove it
   static private int critical_border_coordinate;
   
   static private int size;
+  
+  
+  static private int dist(int x1, int y1, int x2, int y2)
+  {
+    int dx = x2 - x1;
+    int dy = y2 - y1;
+    
+    return dx*dx + dy*dy;
+  }
+  
+  static private int dist_bonus(int x1, int y1, int x2, int y2)
+  {
+    int bonus = (size / 2) - dist(x1, y1, x2, y2);
+    
+    if (bonus < 0)
+      return 0;
+    else
+      return bonus;
+  }
 
 	
   static int rate(int ratingYellow, int ratingRed) //int ratingYellow, int ratingRed)
@@ -168,13 +187,21 @@ public class EvaluatePosition // This class is required - don't remove it
   }
   
   static int evaluateLosing(int[][] pieces, int count)
-  { //TODO
+  {
 		int rating = 0;
 		
+		int x;
+		int y;
 		for (int i = 0; i < count; ++i)
 		{
+		  x = pieces[i][0];
+		  y = pieces[i][1];
+		  
 		  if (pieces[i][2] == KING) rating += king_val;
 		  rating += piece_val;
+		  
+		  rating += dist_bonus(x, y, 0, 0); // to left upper corner
+		  rating += dist_bonus(x, y, size - 1, size - 1); // to right lower corner
 		}
 
 		return rating;
