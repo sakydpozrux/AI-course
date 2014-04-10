@@ -18,11 +18,20 @@ public class EvaluatePosition // This class is required - don't remove it
 	
 	
 	
-	
+	static private enum GamePart
+	{
+	  BEGINNING,
+	  MIDGAME,
+	  END_LOSING,
+	  END_WINNING
+	}
 
   static private boolean YELLOW = true;
   static private boolean RED = false;
   static private int KING = 1;
+  
+  static private int piece_val = 10;
+  static private int king_val = 19;
 
 	
   static int rate(int ratingYellow, int ratingRed) //int ratingYellow, int ratingRed)
@@ -48,6 +57,13 @@ public class EvaluatePosition // This class is required - don't remove it
 
   static int bestEvaluateStrategy(int[][] yellowPieces, int yellowCount, int[][] redPieces, int redCount)
   {
+    int totalCount = yellowCount + redCount;
+    
+    GamePart part;
+    //if (totalCount >= 16) part = BEGINNING;
+    //else if (totalCount >= 8) part = MIDGAME;
+    //else if (totalCount 
+    
     int ratingYellow = evaluateSimpleWeights(yellowPieces, yellowCount);
     int ratingRed = evaluateSimpleWeights(redPieces, redCount);
 
@@ -61,19 +77,16 @@ public class EvaluatePosition // This class is required - don't remove it
 		
 		for (int i = 0; i < count; ++i)
 		{
-		  if (pieces[i][2] == KING) rating += 25;
-		  else rating += 10;
+		  if (pieces[i][2] == KING) rating += king_val;
+		  else rating += piece_val;
 		}
 
 		return rating;
   }
   
-  static int maybeRotateCoordinates(int n, int size)
+  static int rotateCoordinates(int n, int size)
   {
-    if (getColor()) // YELLOW is upper player, so array should be rotated by 180 degrees
-      return size - 1 - n;
-    else // it's lower RED turn, so coordinates are right = don't change anything
-      return n;
+    return size - 1 - n;
   }
 
 	
@@ -94,8 +107,8 @@ public class EvaluatePosition // This class is required - don't remove it
 				  if (board._board[i][j].white) // this is upper, yellow piece
 					{
 					  yellowCount += 1;
-					  yellowPieces[yellowCount][0] = maybeRotateCoordinates(i, size);
-					  yellowPieces[yellowCount][1] = maybeRotateCoordinates(j, size);
+					  yellowPieces[yellowCount][0] = rotateCoordinates(i, size);
+					  yellowPieces[yellowCount][1] = rotateCoordinates(j, size);
 					  yellowPieces[yellowCount][2] = board._board[i][j].king ? 1 : 0;
 					  ++yellowCount;
 					}
@@ -109,10 +122,7 @@ public class EvaluatePosition // This class is required - don't remove it
 					}
 		}
 		
-		int sumPieces = yellowCount + redCount;
-
-		if (sumPieces >= 16) return bestEvaluateStrategy(yellowPieces, yellowCount, redPieces, redCount);
-		else return 1;
+		return bestEvaluateStrategy(yellowPieces, yellowCount, redPieces, redCount);
 	}
 }
 
