@@ -243,11 +243,17 @@ public class EvaluatePosition // This class is required - don't remove it
     int part;
     if (totalCount >= 16)
       part = BEGINNING;
-    else if (totalCount >= 8)
-      part = MIDGAME;
-    else if (yellowCount > redCount)
+    else if ((totalCount <= 12) && (yellowCount > redCount) && (yellowCount - redCount >= 3))
       part = END_YELLOW_WINNING;
-    else if (redCount > yellowCount)
+    else if ((totalCount <= 12) && (redCount > yellowCount) && (redCount - yellowCount >= 3))
+      part = END_RED_WINNING;
+    else if ((totalCount <= 9) && (yellowCount > redCount) && (yellowCount - redCount >= 2))
+      part = END_YELLOW_WINNING;
+    else if ((totalCount <= 9) && (redCount > yellowCount) && (redCount - yellowCount >= 2))
+      part = END_RED_WINNING;
+    else if ((totalCount <= 8) && (yellowCount > redCount) && (yellowCount - redCount >= 1))
+      part = END_YELLOW_WINNING;
+    else if ((totalCount <= 8) && (redCount > yellowCount) && (redCount - yellowCount >= 1))
       part = END_RED_WINNING;
     else
       part = MIDGAME; // play as in midgame
