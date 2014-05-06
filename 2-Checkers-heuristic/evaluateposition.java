@@ -4,24 +4,24 @@ import java.util.*;
 
 public class EvaluatePosition // This class is required - don't remove it
 {
-	static private final int WIN=Integer.MAX_VALUE/2;
-	static private final int LOSE=Integer.MIN_VALUE/2;
-	static private boolean _color; // This field is required - don't remove it
-	static public void changeColor(boolean color) // This method is required - don't remove it
-	{
-		_color=color;
-	}
-	static public boolean getColor() // This method is required - don't remove it
-	{
-		return _color;
-	}
-	
-	
+  static private final int WIN=Integer.MAX_VALUE/2;
+  static private final int LOSE=Integer.MIN_VALUE/2;
+  static private boolean _color; // This field is required - don't remove it
+  static public void changeColor(boolean color) // This method is required - don't remove it
+  {
+    _color=color;
+  }
+  static public boolean getColor() // This method is required - don't remove it
+  {
+    return _color;
+  }
+  
+  
 
-	static private final int BEGINNING = 111;
-	static private final int MIDGAME = 222;
-	static private final int END_YELLOW_WINNING = 333;
-	static private final int END_RED_WINNING = 444;
+  static private final int BEGINNING = 111;
+  static private final int MIDGAME = 222;
+  static private final int END_YELLOW_WINNING = 333;
+  static private final int END_RED_WINNING = 444;
 
   static private boolean YELLOW = true;
   static private boolean RED = false;
@@ -53,7 +53,7 @@ public class EvaluatePosition // This class is required - don't remove it
   static private int size;
   
  
-	static int rotateCoordinates(int n)
+  static int rotateCoordinates(int n)
   {
     return size - 1 - n;
   }
@@ -63,7 +63,7 @@ public class EvaluatePosition // This class is required - don't remove it
     int dx = x2 - x1;
     int dy = y2 - y1;
     
-    return dx*dx + dy*dy;
+    return (int)Math.sqrt(dx*dx + dy*dy);
   }
   
   static private int dist_bonus(int x1, int y1, int x2, int y2)
@@ -75,143 +75,162 @@ public class EvaluatePosition // This class is required - don't remove it
     else
       return bonus;
   }
+  
+  static private int dist_to_enemy_bonus(int x1, int y1, int x2, int y2)
+  {
+    int distance = dist(x1, y1, x2, y2);
+    if (distance == 1) // too close
+      return 0;
 
-	
+    int bonus = size + 2 - distance;
+    if (bonus <= 0)
+      return 0;
+    else
+      return bonus*bonus;
+  }
+
+  
   static int rate(int ratingYellow, int ratingRed) //int ratingYellow, int ratingRed)
   {    
-		int myRating, opponentsRating;
-		
-		if (getColor())
-		{
-		  myRating = ratingYellow;
-		  opponentsRating = ratingRed;
-		}
-		else
-		{
-		  myRating = ratingRed;
-		  opponentsRating = ratingYellow;
-		}
-		
-		if (myRating == 0) return LOSE; 
-		else if (opponentsRating == 0) return WIN; 
-		else return myRating-opponentsRating;
+    int myRating, opponentsRating;
+    
+    if (getColor())
+    {
+      myRating = ratingYellow;
+      opponentsRating = ratingRed;
+    }
+    else
+    {
+      myRating = ratingRed;
+      opponentsRating = ratingYellow;
+    }
+    
+    if (myRating == 0) return LOSE; 
+    else if (opponentsRating == 0) return WIN; 
+    else return myRating-opponentsRating;
   }
 
 
-	static int evaluateBeginning(int[][] pieces, int count)
-	{
-		int rating = 0;
-		
-		int x;
-		int y;
-		for (int i = 0; i < count; ++i)
-		{
-		  x = pieces[i][0];
-		  y = pieces[i][1];
-		  
-		  if (x >= almost_lower_center_coordinate && x < almost_upper_center_coordinate
-		     && y >= almost_lower_agressive_coordinate && y < almost_upper_agressive_coordinate)
-		  {
-		    rating += zone_not_border_bonus;
-		    if (x >= lower_center_coordinate && x < upper_center_coordinate
-		       && y >= lower_agressive_coordinate && y < upper_agressive_coordinate)
-		      rating += zone_center_bonus;
-		  }
-		  
-		  
-		  if ((x == 0 || x == size - 1) && (y == critical_border_coordinate || y == critical_border_coordinate + 1))
-		    rating += zone_strategic_field_bonus;
-		  
-		  
-		  if (y == size - 1) // guard
-		  {
-		    rating += guard_bonus;
-		    
-		    if ((x >= 2 - (size % 2)) && (x % 2 == size % 2))
-		      rating += critical_guard_bonus;
-		  }
-		  
-		  if (pieces[i][2] == KING) rating += king_val;
-		  rating += piece_val;
-		}
+  static int evaluateBeginning(int[][] pieces, int count)
+  {
+    int rating = 0;
+    
+    int x;
+    int y;
+    for (int i = 0; i < count; ++i)
+    {
+      x = pieces[i][0];
+      y = pieces[i][1];
+      
+      if (x >= almost_lower_center_coordinate && x < almost_upper_center_coordinate
+         && y >= almost_lower_agressive_coordinate && y < almost_upper_agressive_coordinate)
+      {
+        rating += zone_not_border_bonus;
+        if (x >= lower_center_coordinate && x < upper_center_coordinate
+           && y >= lower_agressive_coordinate && y < upper_agressive_coordinate)
+          rating += zone_center_bonus;
+      }
+      
+      
+      if ((x == 0 || x == size - 1) && (y == critical_border_coordinate || y == critical_border_coordinate + 1))
+        rating += zone_strategic_field_bonus;
+      
+      
+      if (y == size - 1) // guard
+      {
+        rating += guard_bonus;
+        
+        if ((x >= 2 - (size % 2)) && (x % 2 == size % 2))
+          rating += critical_guard_bonus;
+      }
+      
+      if (pieces[i][2] == KING) rating += king_val;
+      rating += piece_val;
+    }
 
-		return rating;
+    return rating;
   }
   
   static int evaluateMidGame(int[][] pieces, int count)
   {
-		int rating = 0;
-		
-		int x;
-		int y;
-		for (int i = 0; i < count; ++i)
-		{
-		  x = pieces[i][0];
-		  y = pieces[i][1];
-		  
-		  if (x >= almost_lower_center_coordinate && x < almost_upper_center_coordinate
-		     && y >= almost_lower_center_coordinate && y < almost_upper_center_coordinate)
-		  {
-		    rating += zone_not_border_bonus;
-		    if (x >= lower_center_coordinate && x < upper_center_coordinate
-		       && y >= lower_center_coordinate && y < upper_center_coordinate)
-		      rating += zone_center_bonus;
-		  }
-		  
-		  if (y == size - 1) // guard
-		  {
-		    rating += guard_bonus;
-		    
-		    if ((x >= 2 - (size % 2)) && (x % 2 == size % 2))
-		      rating += critical_guard_bonus;
-		  }
-		  
-		  if (pieces[i][2] == KING) rating += king_val;
-		  rating += piece_val;
-		}
+    int rating = 0;
+    
+    int x;
+    int y;
+    for (int i = 0; i < count; ++i)
+    {
+      x = pieces[i][0];
+      y = pieces[i][1];
+      
+      if (x >= almost_lower_center_coordinate && x < almost_upper_center_coordinate
+         && y >= almost_lower_center_coordinate && y < almost_upper_center_coordinate)
+      {
+        rating += zone_not_border_bonus;
+        if (x >= lower_center_coordinate && x < upper_center_coordinate
+           && y >= lower_center_coordinate && y < upper_center_coordinate)
+          rating += zone_center_bonus;
+      }
+      
+      if (y == size - 1) // guard
+      {
+        rating += guard_bonus;
+        
+        if ((x >= 2 - (size % 2)) && (x % 2 == size % 2))
+          rating += critical_guard_bonus;
+      }
+      
+      if (pieces[i][2] == KING) rating += king_val;
+      rating += piece_val;
+    }
 
-		return rating;
+    return rating;
   }
   
   static int evaluateWinning(int[][] pieces, int count, int[][] enemies, int enemiesCount)
   {
-		int rating = 0;
-		
-		int x;
-		int y;
-		for (int i = 0; i < count; ++i)
-		{
-		  x = pieces[i][0];
-		  y = pieces[i][1];
-		  
-		  if (pieces[i][2] == KING) rating += king_val;
-		  rating += piece_val;
-		  
-		  rating += Math.sqrt(dist_bonus(x, y, rotateCoordinates(enemies[0][0]), rotateCoordinates(enemies[0][1]))); 
-		}
+    int rating = 0;
+    
+    int x;
+    int y;
+    float sumDists = 0;
+    for (int i = 0; i < count; ++i)
+    {
+      x = pieces[i][0];
+      y = pieces[i][1];
+      
+      if (pieces[i][2] == KING) rating += king_val;
+      rating += piece_val;
+      
+      sumDists += dist_to_enemy_bonus(x, y, rotateCoordinates(enemies[0][0]), rotateCoordinates(enemies[0][1])); 
+    }
+    sumDists = (int)Math.sqrt(sumDists);
 
-		return rating;
+    return (int)rating + (int)sumDists;
   }
   
   static int evaluateLosing(int[][] pieces, int count)
   {
-		int rating = 0;
-		
-		int x;
-		int y;
-		for (int i = 0; i < count; ++i)
-		{
-		  x = pieces[i][0];
-		  y = pieces[i][1];
-		  
-		  if (pieces[i][2] == KING) rating += king_val;
-		  rating += piece_val;
-		  
-		  rating += dist_bonus(x, y, 0, 0); // to left upper corner
-		  rating += dist_bonus(x, y, size - 1, size - 1); // to right lower corner
-		}
+    int rating = 0;
+    
+    int x;
+    int y;
+    for (int i = 0; i < count; ++i)
+    {
+      x = pieces[i][0];
+      y = pieces[i][1];
+      
+      if (pieces[i][2] == KING) rating += king_val;
+      rating += piece_val;
+      
+      rating += dist_bonus(x, y, 0, 0); // to left upper corner
+      rating += dist_bonus(x, y, size - 1, size - 1); // to right lower corner
 
-		return rating;
+      if ((x == 0 && y == 1) || (x == 1 && y == 0) ||
+          (x == size - 1 && y == size - 2) || (x == size - 2 && y == size - 1))
+        rating += 8;
+    }
+
+    return rating;
   }
 
 
@@ -224,11 +243,17 @@ public class EvaluatePosition // This class is required - don't remove it
     int part;
     if (totalCount >= 16)
       part = BEGINNING;
-    else if (totalCount >= 8)
-      part = MIDGAME;
-    else if (yellowCount > redCount)
+    else if ((totalCount <= 12) && (yellowCount > redCount) && (yellowCount - redCount >= 3))
       part = END_YELLOW_WINNING;
-    else if (redCount > yellowCount)
+    else if ((totalCount <= 12) && (redCount > yellowCount) && (redCount - yellowCount >= 3))
+      part = END_RED_WINNING;
+    else if ((totalCount <= 9) && (yellowCount > redCount) && (yellowCount - redCount >= 2))
+      part = END_YELLOW_WINNING;
+    else if ((totalCount <= 9) && (redCount > yellowCount) && (redCount - yellowCount >= 2))
+      part = END_RED_WINNING;
+    else if ((totalCount <= 8) && (yellowCount > redCount) && (yellowCount - redCount >= 1))
+      part = END_YELLOW_WINNING;
+    else if ((totalCount <= 8) && (redCount > yellowCount) && (redCount - yellowCount >= 1))
       part = END_RED_WINNING;
     else
       part = MIDGAME; // play as in midgame
@@ -267,11 +292,11 @@ public class EvaluatePosition // This class is required - don't remove it
 
 
 
-	
-	static public int evaluatePosition(AIBoard board) // This method is required and it is the major heuristic method - type your code here
-	{
-		size = board.getSize();
-		
+  
+  static public int evaluatePosition(AIBoard board) // This method is required and it is the major heuristic method - type your code here
+  {
+    size = board.getSize();
+    
     int yellowPieces[][] = new int [size*size][3]; // (i, j, king?)
     int redPieces[][] =    new int [size*size][3]; // (i, j, king?)
     
@@ -291,31 +316,31 @@ public class EvaluatePosition // This class is required - don't remove it
     almost_upper_agressive_coordinate = upper_agressive_coordinate + 2;
     
     critical_border_coordinate = size / 2 - 1;
-		
-		
-		for (int i = 0; i < size; i++)
-			for (int j = (i + 1) % 2; j < size; j += 2)
-				if (!board._board[i][j].empty) // field is not empty
-				{
-				  if (board._board[i][j].white) // this is upper, yellow piece
-					{
-					  yellowCount += 1;
-					  yellowPieces[yellowCount][0] = rotateCoordinates(i);
-					  yellowPieces[yellowCount][1] = rotateCoordinates(j);
-					  yellowPieces[yellowCount][2] = board._board[i][j].king ? 1 : 0;
-					  ++yellowCount;
-					}
-					else
-					{	
-					  redCount += 1;
-					  redPieces[redCount][0] = i;
-					  redPieces[redCount][1] = j;
-					  redPieces[redCount][2] = board._board[i][j].king ? 1 : 0;
-					  ++redCount;
-					}
-		}
-		
-		return bestEvaluateStrategy(yellowPieces, yellowCount, redPieces, redCount);
-	}
+    
+    
+    for (int i = 0; i < size; i++)
+      for (int j = (i + 1) % 2; j < size; j += 2)
+        if (!board._board[i][j].empty) // field is not empty
+        {
+          if (board._board[i][j].white) // this is upper, yellow piece
+          {
+            yellowCount += 1;
+            yellowPieces[yellowCount][0] = rotateCoordinates(j);
+            yellowPieces[yellowCount][1] = rotateCoordinates(i);
+            yellowPieces[yellowCount][2] = board._board[i][j].king ? 1 : 0;
+            ++yellowCount;
+          }
+          else
+          {  
+            redCount += 1;
+            redPieces[redCount][0] = j;
+            redPieces[redCount][1] = i;
+            redPieces[redCount][2] = board._board[i][j].king ? 1 : 0;
+            ++redCount;
+          }
+    }
+
+    return bestEvaluateStrategy(yellowPieces, yellowCount, redPieces, redCount);
+  }
 }
 
