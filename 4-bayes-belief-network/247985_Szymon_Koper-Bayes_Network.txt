@@ -1,0 +1,40 @@
+
+
+Zadanie z bayesowskich sieci przekonań
+======================================
+
+Temat: Wybór metody antykoncepcji przez kobiety w Indonezji
+Autor: Szymon Koper
+
+
+Sprawozdanie
+------------
+
+W moim rozwiązaniu skorzystałem z danych w bazie danych dostępnej pod adresem - http://archive.ics.uci.edu/ml/datasets/Contraceptive+Method+Choice .
+
+
+Utworzona przeze mnie sieć korzysta z następujących atrybutów:
+
+ - wykształcenie kobiety
+ - wiek kobiety
+ - zatrudnienie kobiety
+ - standard życia
+ - wykształcenie partnera
+ - zawód partnera
+ - liczba urodzonych dzieci przez kobietę
+ - religia wyznawana przez kobietę
+ - dostęp do mediów (gazety, telewizja, radio, billboardy)
+ - stosowany przez kobietę rodzaj antykoncepcji
+
+
+Na podstawie utworzonej przeze mnie sieci byłem w stanie dojść do następujących stwierdzeń:
+
+ 1. Nie ma wyraźnych różnic między kobietami wyznającymi islam oraz wyznającymi inne religie w Indonezji. Dzietność w rodzinach jest podobna i stosowane środki antykoncepcji mają podobny rozkład prawdopodobieństwa w obu przypadkach.
+ 2. Zadziwiające jest to, że większość kobiet w Indonezji ma ponadprzeciętne wykształcenie, ale pomimo tego około 75% z nich jest bezrobotnych. Jednak wiele z nich ma wielodzietne rodziny (3 i więcej), więc prawdopodonym jest, że swój czas poświęcają na wychowanie potomstwa.
+ 3. Największy wpływ na stosowany środek antykoncepcji ma wykształcenie kobiety, w drugiej kolejności wykształcenie partnera, następnie to czy kobieta pracuje, liczba dzieci już narodzonych, zawód partnera, standard życia i co zadziwiające - na samym końcu religia.
+ 4. Spośród kobiet w Indonezji w wieku poniżej 26 lat blisko 43% z nich ma już dwójkę dzieci.
+
+
+Spodobała mi się idea sieci Bayesowskich. Zaskakujący dla mnie jest fakt, jak wiele faktów można wyprowadzić z tak małej i prostej sieci.
+
+

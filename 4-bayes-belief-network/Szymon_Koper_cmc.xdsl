@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<smile version="1.0" id="Unnamed" numsamples="1000" discsamples="10000">
+	<nodes>
+		<cpt id="wage">
+			<state id="sbelow_26" />
+			<state id="s26_32" />
+			<state id="s32_39" />
+			<state id="s39_up" />
+			<probabilities>0.2416892808683853 0.2444029850746269 0.2600067842605156 0.2539009497964722</probabilities>
+		</cpt>
+		<cpt id="heducation">
+			<state id="e1" />
+			<state id="e2" />
+			<state id="e3" />
+			<state id="e4" />
+			<probabilities>0.03002035278154681 0.1209294436906377 0.2389755766621438 0.6100746268656716</probabilities>
+		</cpt>
+		<cpt id="weducation">
+			<state id="e1" />
+			<state id="e2" />
+			<state id="e3" />
+			<state id="e4" />
+			<parents>wage heducation</parents>
+			<probabilities>0.15625 0.40625 0.40625 0.03125 0.1968085106382979 0.6223404255319149 0.175531914893617 0.005319148936170213 0.07178217821782178 0.3589108910891089 0.4975247524752475 0.07178217821782178 0.01593137254901961 0.1384803921568628 0.3002450980392157 0.5453431372549019 0.6944444444444444 0.1388888888888889 0.02777777777777778 0.1388888888888889 0.2371794871794872 0.4935897435897436 0.1858974358974359 0.08333333333333333 0.07352941176470589 0.3911764705882353 0.4852941176470588 0.05 0.01406926406926407 0.1525974025974026 0.3084415584415585 0.5248917748917749 0.375 0.5416666666666666 0.04166666666666666 0.04166666666666666 0.3532608695652174 0.5271739130434783 0.1141304347826087 0.005434782608695652 0.1051136363636364 0.4460227272727273 0.3551136363636364 0.09375 0.01720647773279352 0.1022267206477733 0.2034412955465587 0.6771255060728745 0.6900000000000001 0.21 0.09 0.01 0.545 0.325 0.105 0.025 0.2591463414634146 0.2713414634146342 0.3567073170731708 0.1128048780487805 0.05542986425339367 0.07352941176470589 0.2138009049773756 0.657239819004525</probabilities>
+		</cpt>
+		<cpt id="nrofchildrenborn">
+			<state id="c1" />
+			<state id="c2" />
+			<state id="c3" />
+			<state id="c4_5" />
+			<state id="c6_up" />
+			<parents>wage</parents>
+			<probabilities>0.1350140056022409 0.4291316526610645 0.2582633053221289 0.1630252100840336 0.01456582633053222 0.0781163434903047 0.1889196675900277 0.23601108033241 0.3772853185595568 0.1196675900277009 0.02916666666666666 0.05260416666666666 0.1671875 0.4015624999999999 0.3494791666666666 0.0272 0.09386666666666667 0.09386666666666667 0.2885333333333333 0.4965333333333333</probabilities>
+		</cpt>
+		<cpt id="wreligion">
+			<state id="NonIslam" />
+			<state id="Islam" />
+			<parents>wage nrofchildrenborn</parents>
+			<probabilities>0.1326530612244898 0.8673469387755102 0.07467532467532469 0.9253246753246754 0.02688172043010753 0.9731182795698925 0.008474576271186441 0.9915254237288136 0.08333333333333333 0.9166666666666666 0.1896551724137931 0.8103448275862069 0.2391304347826087 0.7608695652173914 0.1453488372093023 0.8546511627906976 0.06934306569343066 0.9306569343065693 0.03409090909090909 0.9659090909090909 0.2083333333333333 0.7916666666666666 0.3571428571428571 0.6428571428571428 0.2846153846153846 0.7153846153846154 0.3193548387096774 0.6806451612903226 0.08518518518518518 0.9148148148148149 0.2272727272727273 0.7727272727272727 0.2083333333333333 0.7916666666666666 0.2638888888888889 0.7361111111111111 0.2798165137614679 0.7201834862385321 0.125668449197861 0.874331550802139</probabilities>
+		</cpt>
+		<cpt id="wworking">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>weducation</parents>
+			<probabilities>0.2320261437908497 0.7679738562091504 0.2253731343283582 0.7746268656716419 0.2177615571776156 0.7822384428223844 0.2949826989619377 0.7050173010380623</probabilities>
+		</cpt>
+		<cpt id="hoccupation">
+			<state id="o1" />
+			<state id="o2" />
+			<state id="o3" />
+			<state id="o4" />
+			<parents>weducation heducation</parents>
+			<probabilities>0.04629629629629629 0.3796296296296296 0.4907407407407407 0.08333333333333333 0.06854838709677419 0.3588709677419355 0.5201612903225806 0.05241935483870967 0.05113636363636364 0.2556818181818182 0.6647727272727273 0.02840909090909091 0.2717391304347826 0.3152173913043478 0.2717391304347826 0.141304347826087 0.01923076923076923 0.5576923076923077 0.3269230769230769 0.09615384615384616 0.01404494382022472 0.3960674157303371 0.5533707865168539 0.03651685393258427 0.07061068702290076 0.3377862595419847 0.566793893129771 0.02480916030534351 0.2023809523809524 0.2119047619047619 0.5452380952380953 0.04047619047619048 0.04166666666666666 0.2083333333333333 0.7083333333333333 0.04166666666666666 0.009615384615384616 0.3557692307692308 0.5865384615384616 0.04807692307692308 0.09375 0.3898026315789474 0.5082236842105263 0.008223684210526315 0.2923913043478261 0.2836956521739131 0.4141304347826087 0.009782608695652175 0.125 0.125 0.625 0.125 0.25 0.25 0.45 0.05 0.1810344827586207 0.353448275862069 0.4568965517241379 0.008620689655172414 0.5600917431192661 0.2243119266055046 0.2096330275229358 0.005963302752293578</probabilities>
+		</cpt>
+		<cpt id="mediaexposure">
+			<state id="Good" />
+			<state id="NotGood" />
+			<parents>weducation</parents>
+			<probabilities>0.6241830065359477 0.3758169934640523 0.9149253731343283 0.08507462686567165 0.9549878345498783 0.04501216545012166 0.9887543252595156 0.01124567474048443</probabilities>
+		</cpt>
+		<cpt id="standardofliving">
+			<state id="s1" />
+			<state id="s2" />
+			<state id="s3" />
+			<state id="s4" />
+			<parents>wworking hoccupation mediaexposure</parents>
+			<probabilities>0.01136363636363636 0.02954545454545455 0.2568181818181818 0.7022727272727273 0.08333333333333333 0.08333333333333333 0.4166666666666666 0.4166666666666666 0.04906542056074766 0.1518691588785047 0.1892523364485981 0.6098130841121495 0.025 0.625 0.325 0.025 0.07773109243697479 0.2373949579831933 0.3466386554621849 0.338235294117647 0.2166666666666667 0.2166666666666667 0.2833333333333333 0.2833333333333333 0.225 0.025 0.125 0.625 0.08333333333333333 0.4166666666666666 0.08333333333333333 0.4166666666666666 0.01666666666666667 0.06746031746031746 0.2484126984126984 0.6674603174603174 0.1041666666666667 0.4375 0.02083333333333333 0.4375 0.1029929577464789 0.1346830985915493 0.3283450704225353 0.4339788732394366 0.2232142857142857 0.5446428571428571 0.1875 0.04464285714285714 0.1141304347826087 0.196256038647343 0.3508454106280193 0.338768115942029 0.4451219512195122 0.225609756097561 0.201219512195122 0.1280487804878049 0.1730769230769231 0.1730769230769231 0.25 0.4038461538461539 0.25 0.25 0.25 0.25</probabilities>
+		</cpt>
+		<cpt id="contraceptivemethodused">
+			<state id="NoUse" />
+			<state id="LongTerm" />
+			<state id="ShortTerm" />
+			<parents>wage nrofchildrenborn</parents>
+			<probabilities>0.945578231292517 0.006802721088435373 0.04761904761904762 0.3658008658008659 0.2164502164502165 0.4177489177489178 0.4014336917562725 0.0896057347670251 0.5089605734767025 0.327683615819209 0.0903954802259887 0.5819209039548023 0.2222222222222222 0.3888888888888889 0.3888888888888889 0.9770114942528737 0.01149425287356322 0.01149425287356322 0.5410628019323672 0.178743961352657 0.2801932367149758 0.3062015503875969 0.3294573643410853 0.3643410852713178 0.2506082725060828 0.1776155717761557 0.5717761557177615 0.303030303030303 0.09848484848484848 0.5984848484848485 0.9444444444444443 0.02777777777777777 0.02777777777777777 0.8730158730158731 0.01587301587301588 0.1111111111111112 0.4358974358974359 0.2512820512820513 0.3128205128205128 0.1956989247311828 0.3763440860215054 0.4279569892473118 0.2839506172839507 0.2987654320987654 0.417283950617284 0.9393939393939393 0.0303030303030303 0.0303030303030303 0.898148148148148 0.03703703703703703 0.06481481481481481 0.648148148148148 0.1203703703703704 0.2314814814814815 0.4067278287461774 0.4159021406727829 0.1773700305810398 0.5258467023172905 0.285204991087344 0.1889483065953654</probabilities>
+		</cpt>
+		<decision id="ShouldIMarryHer">
+			<state id="Yes" />
+			<state id="No" />
+		</decision>
+		<utility id="HerEducation">
+			<parents>weducation ShouldIMarryHer</parents>
+			<utilities>0 3 0 1 2 0 3 0</utilities>
+		</utility>
+		<utility id="IsSheWorking">
+			<parents>wworking ShouldIMarryHer</parents>
+			<utilities>1 0 0 1</utilities>
+		</utility>
+		<utility id="IsSheIslamic">
+			<parents>wreligion ShouldIMarryHer</parents>
+			<utilities>1 0 0 1</utilities>
+		</utility>
+		<utility id="IsSheYoungEnough">
+			<parents>wage ShouldIMarryHer</parents>
+			<utilities>2 0 1 0 0 1 0 2</utilities>
+		</utility>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.0.5219.0" name="cmc" faultnameformat="nodestate">
+			<node id="wage">
+				<name>wage</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>130 366 202 414</position>
+			</node>
+			<node id="weducation">
+				<name>weducation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>280 187 352 235</position>
+			</node>
+			<node id="heducation">
+				<name>heducation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>130 143 202 191</position>
+			</node>
+			<node id="nrofchildrenborn">
+				<name>nrofchildrenborn</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>419 366 491 414</position>
+			</node>
+			<node id="wreligion">
+				<name>wreligion</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>585 422 657 470</position>
+			</node>
+			<node id="wworking">
+				<name>wworking</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>422 187 494 235</position>
+			</node>
+			<node id="hoccupation">
+				<name>hoccupation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>419 113 491 161</position>
+			</node>
+			<node id="standardofliving">
+				<name>standardofliving</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>584 187 656 235</position>
+			</node>
+			<node id="mediaexposure">
+				<name>mediaexposure</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>423 281 495 329</position>
+			</node>
+			<node id="contraceptivemethodused">
+				<name>contraceptivemethodused</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>579 299 651 347</position>
+			</node>
+			<textbox>
+				<caption>Input file: cmc.csv\nData rows: 1473\n\nLearning algorithm: Bayesian Search\nElapsed time: 0.171 seconds\nBest score in iteration 10: -13719.8\n\nAlgorithm parameters:\nMax parent count: 8\nIterations: 20\nSample size: 50\nSeed: 0\nLink probability: 0.1\nPrior link probability: 0.001\nMax search time: 0\nUse accuracy as score: no\nBackground knowledge was provided:\n  forced arcs: 6\n  nodes assigned to tiers: 8</caption>
+				<font color="000000" name="Arial" size="8" />
+				<position>2 20 189 286</position>
+			</textbox>
+			<node id="HerEducation">
+				<name>HerEducation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>745 89 829 121</position>
+				<barchart active="true" width="128" height="60" />
+			</node>
+			<node id="IsSheWorking">
+				<name>IsSheWorking</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>743 285 829 317</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="IsSheIslamic">
+				<name>IsSheIslamic</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>747 420 826 452</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="IsSheYoungEnough">
+				<name>IsSheYoungEnough</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>729 519 844 551</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="ShouldIMarryHer">
+				<name>ShouldIMarryHer</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>920 295 1058 373</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
