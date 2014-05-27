@@ -4,3 +4,6 @@
 
 # Jovolog
 3-wumpus/
+
+# User config file for QtCreator project
+*.pro.user
