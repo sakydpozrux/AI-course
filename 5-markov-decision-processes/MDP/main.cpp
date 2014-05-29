@@ -1,7 +1,12 @@
 #include <iostream>
 #include <cstdlib>
+#include <memory>
 
 #include "worlddata.hpp"
+#include "agentfactory.hpp"
+
+// TODO REMOVE BELOW
+#include "qagent.hpp"
 
 int main()
 {
@@ -13,18 +18,10 @@ int main()
     float discount = 0.5;
     agent_mode mode = VAGENT;
 
-    WorldData* world;
-    try
-    {
-        world = new WorldData(width, height, a, b, reward, discount, mode);
-    }
-    catch (std::exception& e)
-    {
-        std::cout << e.what() << std::endl;
-        exit(EXIT_FAILURE);
-    }
+    std::shared_ptr<WorldData> world(new WorldData(width, height, a, b, reward, discount));
+    std::shared_ptr<Agent> exampleagent(AgentFactory::new_agent(mode, world));
+    std::cout << exampleagent->to_string();
 
-    delete world;
     return EXIT_SUCCESS;
 }
 

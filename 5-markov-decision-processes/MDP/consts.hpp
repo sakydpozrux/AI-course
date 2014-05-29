@@ -5,14 +5,6 @@
 
 const float max_allowed_error = 0.01;
 
-struct chances_not_summing_to_1 : std::exception
-{
-    const char* what() const noexcept
-    {
-        return "Exception: Chances to move (a+b+b) not summing to 1.";
-    }
-};
-
 enum agent_mode
 {
     VAGENT = 0,

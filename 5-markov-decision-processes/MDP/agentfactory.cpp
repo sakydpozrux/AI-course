@@ -3,18 +3,18 @@
 #include "qagent.hpp"
 #include "consts.hpp"
 
-Agent* AgentFactory::new_agent(agent_mode mode)
+Agent* AgentFactory::new_agent(agent_mode mode, std::shared_ptr<WorldData> world)
 {
     switch (mode)
     {
     case VAGENT:
-        return new VAgent();
+        return new VAgent(world);
         break;
     case QAGENT:
-        return new QAgent();
+        return new QAgent(world);
         break;
-    default:
-        return new VAgent();
-        break;
+//    default:
+//        return new VAgent(world);
+//        break;
     }
 }
