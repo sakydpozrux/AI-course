@@ -77,8 +77,9 @@ std::vector<std::vector<Field> > WorldDataSerializer::parse_board()
     std::list<std::list<std::string> > board_raw;
     for (++it; it != lines.end(); ++it)
     {
+        boost::trim(*it);
         std::list<std::string> current_line;
-        boost::split(current_line, *it, boost::is_any_of(" \t"), boost::token_compress_on);
+        boost::split(current_line, *it, boost::is_any_of(" q\t"), boost::token_compress_on);
         board_raw.push_front(current_line);
     }
 

@@ -23,5 +23,13 @@ enum agent_mode
     QAGENT = 1
 };
 
+enum direction_arrow
+{
+    UNKNOWN,
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT
+};
 
 #endif // CONSTS_HPP

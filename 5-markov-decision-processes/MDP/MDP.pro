@@ -18,7 +18,8 @@ SOURCES += main.cpp \
     qagent.cpp \
     field.cpp \
     file.cpp \
-    worlddataserializer.cpp
+    worlddataserializer.cpp \
+    direction.cpp
 
 HEADERS += \
     worlddata.hpp \
@@ -29,5 +30,6 @@ HEADERS += \
     qagent.hpp \
     field.hpp \
     file.hpp \
-    worlddataserializer.hpp
+    worlddataserializer.hpp \
+    direction.hpp
 

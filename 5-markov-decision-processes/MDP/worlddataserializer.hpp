@@ -14,13 +14,13 @@ private:
     std::list<std::string> lines;
     std::vector<std::vector<Field> > board;
 
-    int a;
-    int b;
+    float a;
+    float b;
     float reward;
     float discount;
 
 public:
-    WorldDataSerializer(const std::string& path);
+    WorldDataSerializer(const std::string& contents);
     WorldDataSerializer(const File& file);
 
     std::vector<std::vector<Field>>& get_board();
