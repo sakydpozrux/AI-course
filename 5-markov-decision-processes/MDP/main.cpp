@@ -2,7 +2,10 @@
 #include <cstdlib>
 #include <memory>
 #include <string>
+#include <vector>
 
+#include "consts.hpp"
+#include "field.hpp"
 #include "worlddata.hpp"
 #include "agentfactory.hpp"
 
@@ -34,18 +37,32 @@ void world_and_agent_setup(const int argc, const char** argv,
     int width, height;
     float a, b, reward, discount;
 
+    std::vector<std::vector<Field>> field_board;
+
     if (argc < 2)
     {
         width = 4;
         height = 3;
         a = 0.8;
         b = 0.1;
-        reward = 1 / 25;
-        discount = 0.5;
+        reward = -0.04;
+        discount = 0.9;
 
         const agent_mode mode = VAGENT;
 
-        world.reset(new WorldData(width, height, a, b, reward, discount));
+        std::string board_string = "-0.04 0.8 0.1 0.9\n"
+                                   "_      _      _      G:1  \n"
+                                   "_      F      _      G:-1 \n"
+                                   "S      _      B:0.2  _    \n";
+
+        field_board = {
+            {Field(S, reward), Field(X, reward), Field(X, reward)},
+            {Field(X, reward), Field(F, 0), Field(X, reward)},
+            {Field(X, reward), Field(X, reward), Field(X, reward)},
+            {Field(X, reward), Field(G, -1), Field(G, 1)}
+        };
+
+        world.reset(new WorldData(field_board, a, b, reward, discount));
         agent.reset(AgentFactory::new_agent(mode, world));
     }
     else

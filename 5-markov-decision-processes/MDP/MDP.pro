@@ -16,9 +16,9 @@ SOURCES += main.cpp \
     agentfactory.cpp \
     vagent.cpp \
     qagent.cpp \
-    worlddataserializer.cpp \
-    board.cpp \
-    field.cpp
+    field.cpp \
+    file.cpp \
+    worlddataserializer.cpp
 
 HEADERS += \
     worlddata.hpp \
@@ -27,7 +27,7 @@ HEADERS += \
     agentfactory.hpp \
     vagent.hpp \
     qagent.hpp \
-    worlddataserializer.hpp \
-    board.hpp \
-    field.hpp
+    field.hpp \
+    file.hpp \
+    worlddataserializer.hpp
 

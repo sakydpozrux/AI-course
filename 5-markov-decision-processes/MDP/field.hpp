@@ -6,7 +6,7 @@
 class Field
 {
 public:
-    const field_state state;
+    field_state state;
     float value;
 
     Field(field_state state, float value);
