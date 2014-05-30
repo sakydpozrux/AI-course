@@ -3,6 +3,7 @@
 #include <boost/lexical_cast.hpp>
 
 #include "worlddataserializer.hpp"
+#include "field.hpp"
 
 
 WorldDataSerializer::WorldDataSerializer(const std::string& contents_)
@@ -73,17 +74,24 @@ std::vector<std::vector<Field> > WorldDataSerializer::parse_board()
            b = boost::lexical_cast<float>(header_vector.at(2));
     discount = boost::lexical_cast<float>(header_vector.at(3));
 
-    std::vector<std::vector<Field> > board;
-
     std::list<std::list<std::string> > board_raw;
-
     for (++it; it != lines.end(); ++it)
     {
         std::list<std::string> current_line;
         boost::split(current_line, *it, boost::is_any_of(" \t"), boost::token_compress_on);
         board_raw.push_front(current_line);
+    }
 
-        // BIG TODO -- creating corrent Field from this raw strings
+    std::vector<std::vector<Field> > board;
+    board.resize(board_raw.size());
+    int i = 0;
+    for(auto it = board_raw.begin(); it != board_raw.end(); ++it)
+    {
+        for(auto it2 = it->begin(); it2 != it->end(); ++it2)
+        {
+            board.at(i).push_back(Field(*it2, reward));
+        }
+        ++i;
     }
 
     return board;

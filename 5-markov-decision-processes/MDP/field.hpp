@@ -10,6 +10,7 @@ public:
     float value;
 
     Field(field_state state, float value);
+    Field(const std::string& string, float reward);
 
     field_state get_state() const;
 
