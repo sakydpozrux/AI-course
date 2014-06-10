@@ -11,13 +11,16 @@ if !filename
   puts "Example run: ruby solver.rb example1/e1.data"
 end
 
-mdp = MDP.new(filename, absError(), qGamma(), qIterations())
+mdp = MDP.new(filename, absError(), qIterations())
 
-mdp.solveValueIterateAlgorithm
-mdp.storePolicyLog
-mdp.storeGraph
+mdp.solveVIAlgorithm()
+mdp.printVIDirections()
+mdp.printVIUsefulness()
+mdp.storeLog()
+mdp.storeVIGraph()
 
-mdp.solveQLearnAlgorithm
-mdp.printQualityDirections
-mdp.printQualities
+mdp.solveQLearnAlgorithm()
+mdp.printQLearnDirections()
+mdp.printQLearnUsefulness()
+mdp.storeQLearnGraph()
 

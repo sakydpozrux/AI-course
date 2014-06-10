@@ -1,0 +1,247 @@
+1.
+
+a=0.8, b=0.1, reward=-0.04, discount=1
+
+Input - Fields:
+O O O G 
+O F O G 
+S O O O 
+
+Input - Costs:
+-0.04 -0.04 -0.04 1.0 
+-0.04 -0.04 -0.04 -1.0 
+-0.04 -0.04 -0.04 -0.04 
+
+Output - ValueIteration directions:
+>>>G
+^F^G
+^<<<
+
+Output - ValueIteration usefulnesses:
+   0.81    0.87    0.92    1.00 
+   0.76    0.00    0.66   -1.00 
+   0.70    0.64    0.59    0.36 
+
+Output - QLearning directions:
+>>>G
+^F^G
+>>^<
+
+Output - QLearning qualities:
+   0.87    0.92    0.96    1.00 
+   0.81    0.00    0.92   -1.00 
+   0.73    0.81    0.87    0.81 
+
+Algorytm iteracji wartości zbiega po 14 iteracjach.
+Wyliczona polityka wygląda bardzo sensownie i jest podobna
+do polityki przedstawionej na wykładzie.
+
+Wygląda na to, że algorytm iteracji daje lepszy rezultat
+na tej planszy niż algorytm Q-Learningowy.
+
+2.
+
+a=0.8, b=0.1, reward=-1, discount=0.99
+
+Input - Fields:
+O O O O 
+O O O O 
+O O B O 
+S O F G 
+
+Input - Costs:
+-1.0 -1.0 -1.0 -1.0 
+-1.0 -1.0 -1.0 -1.0 
+-1.0 -1.0 -20.0 -1.0 
+-1.0 -1.0 -1.0 100.0 
+
+Output - ValueIteration directions:
+>>>v
+>>>v
+^^>v
+^^FG
+
+Output - ValueIteration usefulnesses:
+  81.94   84.26   86.59   88.88 
+  81.73   84.27   87.06   91.55 
+  79.59   80.60   70.47   94.54 
+  77.45   78.25    0.00  100.00 
+
+Output - QLearning directions:
+>>>v
+>>>v
+>^>v
+>^FG
+
+Output - QLearning qualities:
+  77.37   84.93   90.08   93.46 
+  84.09   89.78   93.38   95.91 
+  77.42   84.44   76.93   97.99 
+  70.08   77.58    0.00  100.00
+  
+Algorytm iteracji wartości zbiega po 25 iteracjach.
+Tutaj również rozwiązanie znalezione przez algorytm iteracji
+wartości wygląda sensownie.
+
+3.
+
+a=0.8, b=0.1, reward=-1, discount=0.90
+
+Input - Fields:
+O O O O 
+O O O O 
+O O B O 
+S O F G 
+
+Input - Costs:
+-1.0 -1.0 -1.0 -1.0 
+-1.0 -1.0 -1.0 -1.0 
+-1.0 -1.0 200.0 -1.0 
+-1.0 -1.0 -1.0 100.0 
+
+Output - ValueIteration directions:
+>vvv
+>>v<
+>>v<
+>^FG
+
+Output - ValueIteration usefulnesses:
+ 887.12  997.90 1111.33 1002.59 
+ 997.80 1137.57 1294.85 1129.65 
+1110.17 1294.10 1516.40 1201.47 
+ 995.86 1121.29    0.00  100.00 
+
+Output - QLearning directions:
+vvvv
+>>v<
+>>v<
+^^FG
+
+Output - QLearning qualities:
+ 710.93  854.58 1013.84  859.56 
+ 854.91 1016.53 1195.56 1017.95 
+1010.52 1194.00 1396.18 1195.03 
+ 846.44 1010.64    0.00  100.00
+ 
+Pole specjalne ma nagrodę dużo wyższą (wartość 200) niż
+stan terminalny (wartość 100), przez co algorytm dąży do jak
+najdłuższego pozostania na polu specjalnym i kumulację nagrody,
+poprzez próby wejścia na sąsiednią ścianę.
+To jest też powodem tak dużej liczby iteracji, w liczbie 87.
+
+4.
+
+a=0.5 b=0.25 reward=-1 discount=0.99
+
+Input - Fields:
+O O O O 
+O O O O 
+O O B O 
+S O F G 
+
+Input - Costs:
+-1.0 -1.0 -1.0 -1.0 
+-1.0 -1.0 -1.0 -1.0 
+-1.0 -1.0 -20.0 -1.0 
+-1.0 -1.0 -1.0 100.0 
+
+Output - ValueIteration directions:
+>>>v
+^>^v
+^^>>
+^^FG
+
+Output - ValueIteration usefulnesses:
+  58.10   62.02   66.22   70.04 
+  56.67   60.18   65.33   75.39 
+  53.87   54.52   50.14   83.98 
+  50.96   51.29    0.00  100.00 
+
+Output - QLearning directions:
+>vvv
+>>>v
+>^>v
+>^FG
+
+Output - QLearning qualities:
+  79.79   86.20   90.52   93.58 
+  85.94   90.55   93.60   95.93 
+  80.25   86.25   76.92   97.99 
+  73.02   80.33    0.00  100.00
+  
+Zmiany wartości w stosunku do poprzedniego zadania:
+ - wartość na polu specjalnym została zmieniona z 200 na -20,
+ - wartości a i b zmienione z odpowiednio 0,5 i 0,25 na 0,8 i 0,1,
+ - współczynnik dyskontowania zmieniony z 0,99 na 0,90
+
+Zmiany te skutkują wyraźnie zauważalną zmianą polityki znalezionej
+przez algorytm iteracji wartości. Algorytm stara się uniknąć
+przechodzenia przez pole specjalne o wysokiej karze
+Ciekawe jest to, że algorytm stara się przechodzić w bezpiecznej
+odległości od pola specjalnego, czyli nie idzie najkrótszą ścieżką.
+W polu (4,2) żeby nie ryzykować wejścia na pole specjalne, polityka
+sugeruje próbę wejścia na ścianę po prawej stronie, co skutkuje
+szansą 50% na pozostanie w tym samym polu, i po 25% na przejście
+na pole wyżej lub przejście do stanu terminalnego.
+
+Algorytm zbiega po 73 iteracjach.
+
+
+5.
+
+a=0.8, b=0.1 reward=-1, discount=0.6
+
+Input - Fields:
+O O O O 
+O O O O 
+O O B O 
+S O F G 
+
+Input - Costs:
+-1.0 -1.0 -1.0 -1.0 
+-1.0 -1.0 -1.0 -1.0 
+-1.0 -1.0 -20.0 -1.0 
+-1.0 -1.0 -1.0 100.0 
+
+Output - ValueIteration directions:
+>>>v
+>>>v
+>>>v
+^^FG
+
+Output - ValueIteration usefulnesses:
+   0.20    2.30    5.97   12.28 
+   1.37    4.94   11.86   25.39 
+  -0.14    1.77    5.18   50.33 
+  -1.15   -0.23    0.00  100.00 
+
+Output - QLearning directions:
+>>>v
+>>>v
+>>>v
+>^FG
+
+Output - QLearning qualities:
+   1.85    5.14   10.58   19.54 
+   5.10   10.56   19.53   34.37 
+   3.75    8.14   15.37   58.99 
+   1.06    3.75    0.00  100.00
+   
+W stosunku do danych z zadania 3 zmieniłem tutaj współczynnik
+dyskontowania na 0,6. Jest to wartość na tyle mała, że algorytm
+nie zdążył wyliczyć poprawnych wartości (zbiegł zbyt szybko,
+w 13 iteracjach) i sugeruje przejście przez niekorzystny stan
+specjalny. Wygląda na to, że algorytm przy tych danych sugeruje
+użycie najkrótszej ścieżki, ale niekoniecznie najtańszej.
+
+
+Q-Learning.
+Parametr gamma (epsilon) ustawiłem na 0,05, co skutkowało
+algorytmem odważniej eksplorującym planszę, ale bardziej
+opornym na uczenie się.
+Ogólnie algorytm Q-Learningowy sprawia wrażenie dającego
+gorsze rezultaty niż algorytm iteracji wartości.
+Przykładowo na planszy z 1-ego zadania czasem uznaje,
+że optymalnie jest iść ryzykowną ścieżką sąsiadującą
+z polem specjalnym o niekorzystnej nagrodzie.
+
