@@ -36,8 +36,6 @@ Algorytm iteracji wartości zbiega po 14 iteracjach.
 Wyliczona polityka wygląda bardzo sensownie i jest podobna
 do polityki przedstawionej na wykładzie.
 
-Wygląda na to, że algorytm iteracji daje lepszy rezultat
-na tej planszy niż algorytm Q-Learningowy.
 
 2.
 

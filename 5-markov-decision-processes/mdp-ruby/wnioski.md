@@ -16,6 +16,9 @@ Kod źródłowy znajduje się [tutaj](https://github.com/sakydpozrux/AI-course/
 > [https://github.com/sakydpozrux/AI-course/tree/master/5-markov-decision-processes/mdp-ruby](https://github.com/sakydpozrux/AI-course/tree/master/5-markov-decision-processes/mdp-ruby)
 
 
+----------
+
+
 Część 1 - Iteracja wartości
 ============================
 
@@ -292,6 +295,9 @@ S O F G
 W stosunku do danych z zadania 3 zmieniłem tutaj współczynnik dyskontowania na 0,6. Jest to wartość na tyle mała, że algorytm nie zdążył wyliczyć poprawnych wartości (zbiegł zbyt szybko, w 13 iteracjach) i sugeruje przejście przez niekorzystny stan specjalny. Wygląda na to, że algorytm przy tych danych sugeruje użycie najkrótszej ścieżki, ale niekoniecznie najtańszej.
 
 
+----------
+
+
 Część 2 - Q-Learning
 ====================
 
@@ -330,18 +336,18 @@ S O F G
 
 ### Obliczone użyteczności:
 ```
-  33.17   83.15   87.93   92.50 
-  78.09   90.08   93.50   95.92 
-  74.78   84.74   71.49   97.99 
-  65.86   76.73    0.00  100.00
+  79.10   85.84   90.45   93.51 
+  85.85   90.44   93.56   95.92 
+  79.75   86.00   76.92   97.99 
+  72.00   79.73    0.00  100.00
 ```
 
 ### Znaleziona polityka:
 ```
-vvvv
+v>vv
 >>>v
->^^v
->^FG
+>^>v
+^^FG
 ```
 
 ### Wykres użyteczności:
@@ -362,17 +368,17 @@ vvvv
 
 ### Obliczone użyteczności:
 ```
-  85.76   87.81   89.86   91.93 
-  86.48   88.73   91.05   94.20 
-  84.49   85.91   74.21   96.55 
-  82.51   83.78    0.00  100.00 
+  77.25   85.46   90.40   93.59 
+  85.09   90.45   93.59   95.93 
+  78.47   85.94   76.85   97.99 
+  69.30   78.24    0.00  100.00 
 ```
 
 ### Znaleziona polityka:
 ```
 >>>v
 >>>v
-^^>v
+>^>v
 ^^FG
 ```
 
@@ -381,8 +387,8 @@ vvvv
 
 ## <i class="icon-folder-open"></i> Wnioski z części 2:
 
-Wartość epsilona ustawiona na 0.05, skutkowuje algorytmem odważniej eksplorującym planszę, ale mniej chętnie korzystającym z już posiadanej wiedzy, czyli podążania ścieżką uznawaną za aktualnie optymalną.
-W otrzymanych politykach jest widoczna znaczna różnica.
+Wartość epsilona ustawiona na 0.05, skutkuje algorytmem odważniej eksplorującym planszę, ale mniej chętnie korzystającym z już posiadanej wiedzy, czyli podążania ścieżką uznawaną za aktualnie optymalną.
+Widoczna jest mała różnica w polach (0,3) oraz (2,3).
 
 
   [t1vi]: https://dl.dropboxusercontent.com/u/27983218/tasks/t1/t1.data_vi.util.jpg

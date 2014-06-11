@@ -8,6 +8,7 @@ class MDP
     
     @absError = absError
     @qIterations = qIterations
+    @epsilon = 0
     @usefulnessfilecols = 1
     @iteration = 1
     
@@ -217,7 +218,7 @@ class MDP
       @iteration = 1
 
       begin
-        if @epsilon * 100 > rand(100) 
+        if @epsilon * 100 <= rand(100)
           direction = rand(4)
         else
           direction = bestQDirection(x, y)
