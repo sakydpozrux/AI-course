@@ -1,0 +1,36 @@
+Ocena zadania (nie ma potrzeby samodzielnej oceny wykonanego zadania):
+Dane --- 0..5 punktów
+=====================
+[ ] Zbiór jest statystyką rzeczywistego zjawiska?
+[ ] Danych jest dostatecznie dużo do przeprowadzenia eksperymentu?
+[ ] Źrodło danych podano w raporcie?
+[ ] Zidentyfikowane: * atrybuty liczbowe + atrybuty o wielu wartościach?
+* atrybuty z brakującymi wartościami?
+* atrybut-klasa, jeśli nie jest oczywisty?
+* opis w raporcie?
+Wstępna analiza --- 0..5 punktów
+================================
+[ ] Wstępna analiza własności zbioru, analiza histogramów atrybutów?
+[ ] Potrzeba wykonania wstępnego przetworzenia danych, opis w raporcie?
+[ ] Wstępna próba klasyfikacji na zbiorze uczącym, wynik w raporcie?
+[ ] Wstępna próba klasyfikacji na zbiorze testowym metodą walidacji
+krzyżowej, wynik w raporcie?
+[ ] Wstępna próba klasyfikacji na zbiorze testowym metodą podziału zbioru,
+wielkość zbioru uczącego, wynik w raporcie?
+Minimalizacja błędu --- 0..10 punktów
+=====================================
+[ ] Wykonane próby poprawy klasyfikacji, opis w raporcie?
+[ ] Zoptymalizowana próba klasyfikacji na zbiorze uczącym, wynik w raporcie?
+[ ] Zoptymalizowana próba klasyfikacji na zbiorze testowym metodą walidacji
+krzyżowej, wynik w raporcie?
+[ ] Zoptymalizowana próba klasyfikacji na zbiorze testowym metodą podziału
+zbioru, wynik w raporcie?
+[ ] Badanie niezbędnej wielkości zbioru uczącego, wynik w raporcie?
+Dodatkowe kary --- -7..0 punktów
+================================
+[-4p] brak kompletnego raportu przysłanego w terminie
+[-2p] raport nie jest napisany w punktach, zgodnie z instrukcja
+[-2p] raport zbyt długi, zamieszczone opisy elementów, których nie ma
+w instrukcji (nie dotyczy końcowych wniosków podsumowujących)
+[-3p] ćwiczenie zrobione na zbiorze irysów (3 klasy, 4 atr., 150 prób.),
+lub grzybów (2 klasy, 10 atr., 6905/8124 prób.)

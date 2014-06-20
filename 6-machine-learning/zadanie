@@ -1,0 +1,26 @@
+Szczegóły zadania podane na zajęciach.
+Opis na stronie WWW kursu.
+Proszę przysłać w systemie Moodle raport tekstowy w postaci notatki, sporządzony według poniższych punktów:
+1. Dane:
+* Jaki był temat zadania?
+* Skąd wzięte dane?
+* Czy dane są statystyką rzeczywistego zjawiska?
+* Ile atrybutów, ile rekordów?
+* Ogólnie, co opisują zawarte w zbiorze danych atrybuty?
+* Co opisuje jeden rekord zbioru danych?
+* Czy dane wymagały wstępnego przetworzenia (czyszczenie, konwersja formatu)?
+2. Wstępna analiza:
+* Jaki program został wykorzystany?
+* Co wynika z pobieżnej analizy danych, analizy histogramów atrybutów?
+* Jaki zbiór był użyty do analizy?
+* Wynik klasyfikacji zbioru uczącego, wnioski?
+* Wynik klasyfikacji zbioru testowego: (1) walidacja krzyżowa, (2) podział zbioru, wnioski?
+* Inne spostrzeżenia i wnioski?
+3. Minimalizacja błędu:
+* Jakie metody maszynowego uczenia się były stosowane, jak zostały dobrane ich parametry, jakie były wyniki?
+* Jakie próby minimalizacji błędu były wykonane i jakie były ich wyniki?
+* Czy zauważono jakieś specjalne cechy zbioru danych i zagadnienia, które wymagałyby specjalnego potraktowania, jakie procedury podjęto, i jakie przyniosły one wyniki?
+* Wynik końcowej klasyfikacji zbioru uczącego?
+* Wynik końcowej klasyfikacji zbioru testowego: (1) walidacja krzyżowa, (2) podział zbioru?
+* Wynik określenia minimalnej liczby próbek niezbędnej do wyuczenia klasyfikatora?
+* Wnioski końcowe?

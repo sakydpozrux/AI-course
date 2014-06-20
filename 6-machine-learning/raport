@@ -1,0 +1,204 @@
+Raport z pracowni 6 z SI
+========================
+
+1. Dane
+=======
+
+Bazy pobrałem z witryny http://archive.ics.uci.edu/ . Dane dotyczą statystyki rzeczywistego zjawiska. Zestawy danych poddałem modyfikacji, żebym mógł wygnidniej wykonywać na nich ćwiczenia. Poszczególne modyfikacje opisałem w odniesieniu do każdej z baz.
+Atrybuty są różnych typów, co też czasem było powodem do modyfikacji formatu bazy.
+
+Adult
+-----
+
+Baza ma 48842 wpisy. Każdy wpis ma 14 atrybutów.
+Dane można wykorzystać do oceny, czy dana osoba zarabia powyżej $50000 rocznie.
+Modyfikacja polegała na przekonwertowaniu zestawu danych do formatu arff i usunięciu wpisów, które posiadały brakujące informacje (oznaczone znakiem '?' w bazie). Łącznie usunąłem 6465 wpisów z brakującymi informacjami.
+
+ 
+Banknote authentication
+-----------------------
+
+Baza ma 1372 wpisy. Każdy wpis ma 5 atrybutów.
+Dane w bazie można wykorzystać do oceny czy dany bankot jest autentyczny.
+Do przygotowania bazy skorzystałem z konwertera wbudowanego w program Weka.
+Po wczytaniu pliku dane poddałem dyskretyzacji.
+
+
+2. Wstępna analiza
+==================
+
+Podczas wykonywania poleceń tego zadania korzystałem z programu Weka.
+
+Adult
+-----
+
+Analiza histogramów jasno pokazuje rozkład różnych wartości, z których można wyczytać wiele ciekawych rzeczy.
+Wyraźnie widać przewagę narodowości USA. Jest to skutkiem tego, że badania były przeprowadzane w USA. Większość ludzi jest zatrudnionych w firmach prywatnych.
+
+Wstępną analizę zacząłem od klasyfikatora NaiveBayes.
+
+**Wstępna próba klasyfikacji na zbiorze uczącym:**
+
+ - poprawnie sklasyfikowane 82.2277 %
+ - niepoprawnie sklasyfikowane 17.7723 %
+ - średni błąd bezwzględny 0.1942
+ - błąd średniokwadratowy 0.3594
+ - średni błąd względny 52.0964 %
+ - Root relative squared error 83.25 %   
+
+
+**Wstępna próba klasyfikacji na zbiorze testowym metodą walidacji krzyżowej 10%:**
+
+ - poprawnie sklasyfikowane 82.1945 %
+ - niepoprawnie sklasyfikowane 17.8055 %
+ - średni błąd bezwzględny 0.1946
+ - błąd średniokwadratowy 0.3599
+ - średni błąd względny 52.1853 %
+ - Root relative squared error 83.3516 %  
+
+
+**Wstępna próba klasyfikacji na zbiorze testowym metodą podziału zbioru 66%:**
+
+ - poprawnie sklasyfikowane 82.1008 %
+ - niepoprawnie sklasyfikowane 17.8992 %
+ - średni błąd bezwzględny 0.1956
+ - błąd średniokwadratowy 0.3602
+ - średni błąd względny 52.4946 %
+ - Root relative squared error 83.5022 %
+
+
+Banknote authentication
+-----------------------
+
+Podczas analizy histogramów zauważyłem, np. że w bazie jest w przybliżeniu po równo wpisów reprezentujących banknoty autentyczne i banknoty fałszywe.
+Duży wpływ na klasyfikację ma atrybut reprezentujący wariancję transformowanego obrazu banknotu (variance of Wavelet Transformed image). Widać, że skrajne wartości atrybutów: wariancji, skośności i kurtozy wręcz decydują o autentyczności banknotu.
+
+Podobnie jak wcześniej, analizę rozpocząłem od klasyfikatora NaiveBayes.
+
+**Wstępna próba klasyfikacji na zbiorze uczącym:**
+
+ - poprawnie sklasyfikowane 90.5908 %
+ - niepoprawnie sklasyfikowane 9.4092 %
+ - średni błąd bezwzględny 0.0309
+ - błąd średniokwadratowy 0.1142
+ - średni błąd względny 31.1031 %
+ - Root relative squared error 51.4019 %  
+
+
+**Wstępna próba klasyfikacji na zbiorze testowym metodą walidacji krzyżowej 10%:**
+
+ - poprawnie sklasyfikowane 89.5697 %
+ - niepoprawnie sklasyfikowane 10.4303 %
+ - średni błąd bezwzględny 0.032
+ - błąd średniokwadratowy 0.117
+ - średni błąd względny 32.1874 %
+ - Root relative squared error 52.6337 %
+
+
+**Wstępna próba klasyfikacji na zbiorze testowym metodą podziału zbioru 66%:**
+
+ - poprawnie sklasyfikowane 91.6309 %
+ - niepoprawnie sklasyfikowane 8.3691 %
+ - średni błąd bezwzględny 0.0315
+ - błąd średniokwadratowy 0.1146
+ - średni błąd względny 31.5896 %
+ - Root relative squared error 51.5311 %
+ 
+ 
+
+3. Minimalizacja błędu
+======================
+
+Próby poprawy klasyfikacji rozpocząłęm właściwie już wcześniej np. poprzez usunięcie wartości.
+Kolejnym pomysłem było skorzystanie z różnych algorytmów klasyfikacji, w celu ich porównania i wybrania takiego, który daje najbardziej trafne wyniki.
+
+
+
+
+Adult
+-----
+
+Zauważyłem, liczba instancji w tym zbiorze jest ogromna. Przez co zbiór potrzebny do wyuczenia algorytmu mogłem zmniejszyć aż do 0.5% co odpowiada około 250 wpisom. Po zmniejszeniu tej liczby znacząco zaczyna spadać poprawność klasyfikacji.
+
+W początkowej wersji bazy były 2 atrybuty, nazwane capitalgain i capitalloss. Zauważyłem, że nadal było w nich wiele wartości pustych. Po ich usunięciu zauważyłem, że wyniki się poprawiły.
+
+Najbardziej korzystne wyniki (około 86% poprawności) dawały metody klasyfikacji oparte na drzewach (J48, REPTree). Metody oparte na sieciach Bayesowskich skutkowały poprawnością około 82%.
+
+Poniższe wyniki są rezultatem działania klasyfikatora REPTree.
+
+**Wstępna próba klasyfikacji na zbiorze uczącym:**
+
+ - poprawnie sklasyfikowane 86.4358 %
+ - niepoprawnie sklasyfikowane 13.5642 %
+ - średni błąd bezwzględny 0.194 
+ - błąd średniokwadratowy 0.3115
+ - średni błąd względny 52.0455 %
+ - Root relative squared error 72.1431 %  
+
+
+**Wstępna próba klasyfikacji na zbiorze testowym metodą walidacji krzyżowej 10%:**
+
+ - poprawnie sklasyfikowane 89.5697 %
+ - niepoprawnie sklasyfikowane 10.4303 %
+ - średni błąd bezwzględny 0.032
+ - błąd średniokwadratowy 0.117
+ - średni błąd względny 32.1874 %
+ - Root relative squared error 52.6337 %
+
+
+**Wstępna próba klasyfikacji na zbiorze testowym metodą podziału zbioru 66%:**
+
+ - poprawnie sklasyfikowane 91.6309 %
+ - niepoprawnie sklasyfikowane 8.3691 %
+ - średni błąd bezwzględny 0.0315
+ - błąd średniokwadratowy 0.1146
+ - średni błąd względny 31.5896 %
+ - Root relative squared error 51.5311 %
+ 
+
+Banknote authentication
+-----------------------
+
+Minimalny podzbiór danych oceniłem na około 500 instancji (tj. 61% zbioru). Przy tej liczbie instancji procent poprawnych klasyfikowań pomniejszył się o 1%, więc nadal jest to około 91%.
+
+W tym przypadku moim zdaniem najlepsze rezultaty dawały drzewa J48.
+
+**Wstępna próba klasyfikacji na zbiorze uczącym:**
+
+ - poprawnie sklasyfikowane 98.833  %
+ - niepoprawnie sklasyfikowane 1.167  %
+ - średni błąd bezwzględny 0.0194
+ - błąd średniokwadratowy 0.0984
+ - średni błąd względny 3.9186 %
+ - Root relative squared error 19.7955 %  
+
+
+**Wstępna próba klasyfikacji na zbiorze testowym metodą walidacji krzyżowej 10%:**
+
+ - poprawnie sklasyfikowane 98.1036 %
+ - niepoprawnie sklasyfikowane 1.8964 %
+ - średni błąd bezwzględny 0.0271
+ - błąd średniokwadratowy 0.1303
+ - średni błąd względny 5.4836 %
+ - Root relative squared error 26.221  %
+
+
+**Wstępna próba klasyfikacji na zbiorze testowym metodą podziału zbioru 66%:**
+
+ - poprawnie sklasyfikowane 98.0687 %
+ - niepoprawnie sklasyfikowane 1.9313 %
+ - średni błąd bezwzględny 0.0286
+ - błąd średniokwadratowy 0.1204
+ - średni błąd względny 5.7834 %
+ - Root relative squared error 24.1991 %
+
+
+4. Wnioski
+==========
+
+Przy pierwszej bazie modyfikacje poprawiły nieco wynik.
+Druga baza wydała mi się bardziej zoptymalizowana pod klasyfikację, przez co trudno było uzyskać lepsze wyniki niż przed próbami poprawienia klasyfikacji.
+Różne opcje testowania zbioru dają nieco odmienne wyniki. Czasem można natrafić na podzbiór testowy, który daje wyniki bardzo różniące się z całym zbiorem.
+Zauważyłem, że różne metody dają bardzo odmienne wyniki. Domyślny klasyfikator ZeroR wydał mi się najmniej użyteczny, a najbardziej użyteczne we wszystkich przypadkach wydały mi się klasyfikatory oparte na drzewch - w szczególności J48.
+Baza z autentykacją banknotów wydała mi się bardziej zoptymalizowana na klasyfikację banknotów jako autentyczne lub fałszywe.
+
